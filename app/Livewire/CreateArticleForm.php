@@ -29,6 +29,9 @@ class CreateArticleForm extends Component
             'category' => $this->category,
             'user_id' => Auth::id()
         ]);
+
+        $this->reset();
+        session()->flash('message', 'Articolo inserito correttamente');
     }
     public function render()
     {

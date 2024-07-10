@@ -1,2 +1,11 @@
 @import './style.css';
 @import 'bootstrap';
+@import './masthead.css';
+
+:root {
+    --main: #ffffff;
+    --acc: #2c3e50;
+    --sec: #3498db;
+    --ter: #f1c40f;
+    --bg: #ecf0f1;
+};

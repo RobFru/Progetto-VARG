@@ -1,6 +1,4 @@
 <x-layout>
-    <x-navbar></x-navbar>
-
     <div class="container">
         <form method="POST" action="{{ route('login') }}">
             @csrf

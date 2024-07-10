@@ -13,4 +13,8 @@ class PublicController extends Controller
     {
         return view('welcome');
     }
+    public function create()
+    {
+        return view('create.articles');
+    }
 }

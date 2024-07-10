@@ -3,7 +3,8 @@ Passaggi post clone:
 -cp .env.example .env
 -php artisan key:gen
 -php artisan migrate
-- npm i
+-npm i
+-composer require livewire/livewire
 
 Per DB:
 -winpty mysql -u root -p

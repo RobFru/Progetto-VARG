@@ -1,3 +1,5 @@
 <x-layout>
-    <x-navbar></x-navbar>
+
+    <x-masthead/>
+
 </x-layout>
