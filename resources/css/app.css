@@ -1,6 +1,7 @@
 @import './style.css';
 @import 'bootstrap';
 @import './masthead.css';
+@import './button86.css';
 
 :root {
     --main: #ffffff;
@@ -9,3 +10,7 @@
     --ter: #f1c40f;
     --bg: #ecf0f1;
 };
+
+a{
+    text-decoration: none;
+}
