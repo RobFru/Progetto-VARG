@@ -1,5 +1,5 @@
-@import './style.css';
 @import 'bootstrap';
+@import './style.css';
 @import './masthead.css';
 @import './button86.css';
 
@@ -9,8 +9,8 @@
     --sec: #3498db;
     --ter: #f1c40f;
     --bg: #ecf0f1;
-};
+}
 
-a{
+a {
     text-decoration: none;
 }

@@ -15,7 +15,7 @@
     justify-content: center;
     white-space: nowrap;
     user-select: none;
-    -webkit-user-select: none;
+    /* -webkit-user-select: none; */
     touch-action: manipulation;
   }
   
@@ -43,7 +43,7 @@
     height: 35px;
     background: #ffffff15;
     backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    /* -webkit-backdrop-filter: blur(5px); */
     border-radius: 50px;
   }
   
