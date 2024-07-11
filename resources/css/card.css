@@ -16,10 +16,6 @@ html {
     font-family: "Open Sans Condensed", sans-serif;
 }
 
-body {
-    background: -webkit-linear-gradient(75deg, #d33f34 50%, #a61322 50.1%);
-    background: linear-gradient(15deg, #d33f34 50%, #a61322 50.1%);
-}
 
 /*--------------------
 Shop Card
