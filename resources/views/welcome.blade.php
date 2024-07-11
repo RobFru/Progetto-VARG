@@ -12,15 +12,15 @@ title="VARG">
         </div>
     </div>
     <div class="row">
-        <div class="col-12">
+        {{-- <div class="col-12"> --}}
             @forelse ($articles as $article)
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-4 d-flex justify-content-center">
                 <x-card :article="$article"/>
             </div>
             @empty
             <div class="col-12">
                 <h3 class="text-center">
-                    there are no articles yet.
+                    There are no articles yet.
                 </h3>
             </div>  
             @endforelse

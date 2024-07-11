@@ -22,8 +22,9 @@ a {
 }
 
 .btn-custom {
-    background-color: var(--btn);
-    color: var(--txt);
+    background-color: var(--btn)!important;
+    color: var(--txt)!important;
+    border-color: var(--acc)!important;
 }
 
 

@@ -3,14 +3,14 @@
 <div class="container-fluid">
     <div class="row ">
         <div class="col-12">
-            <h1 class="">
+            <h1 class="d-flex justify-content-center">
                 Articles
             </h1>
         </div>
     </div>
     <div class="row">
         @forelse ($articles as $article)
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-4 mb-5">
                 <x-card :article="$article"/>
             </div>
             @empty
