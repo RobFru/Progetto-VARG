@@ -35,8 +35,9 @@ class ArticleController extends Controller
             new Middleware( 'auth', only: [ 'create' ]),
         ];
     }
-    public function byCategory(Category $category)
+    public function byCategory($category)
     {
+        dd($category);
         return view('articles.byCategory', ['articles' => $category->articles, 'category' => $category]);
     }
 }

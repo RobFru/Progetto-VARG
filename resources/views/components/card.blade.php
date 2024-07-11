@@ -23,7 +23,7 @@
     <div class="cta">
         <div class="price"><span>$</span>{{ $article->price }}</div>
         <a class="" href="{{ route('show.article', compact('article')) }}"><button class="btn">Details<span class="bg"></span></button></a>
-        <a href="{{route('byCategory', compact ('category'))}}" class="btn">{{$article->category->name}}</a>
+        <a href="{{route('byCategory', ['category' => $article->category])}}" class="btn">{{$article->category->name}}</a>
     </div>
 </div>
 <div class="bg"></div>

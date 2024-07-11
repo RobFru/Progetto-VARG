@@ -11,7 +11,7 @@
         <div class="col-12 d-flex justify-content-center">
             @forelse ($articles as $article)
             <div class="col-12 col-md-3">
-                <x-card :article="$article" :category="$article->category" />
+                <x-card :article="$article"/>
             </div>
             @empty
             <div class="col-12">
