@@ -1,0 +1,11 @@
+.btn-custom {
+    background-color: var(--btn)!important;
+    color: var(--txt)!important;
+    border-color: var(--acc)!important;
+}
+.btn-custom:hover {
+    background-color: var(--acc)!important;
+    color: var(--txt)!important;
+    border-color: var(--acc)!important;
+    transform: scale(1.1);
+}

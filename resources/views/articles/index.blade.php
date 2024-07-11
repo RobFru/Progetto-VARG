@@ -1,9 +1,9 @@
 <x-layout>
 
 <div class="container-fluid">
-    <div class="row ">
+    <div class="row">
         <div class="col-12">
-            <h1 class="d-flex justify-content-center">
+            <h1 class="d-flex justify-content-center mt-3 mb-3">
                 Articles
             </h1>
         </div>

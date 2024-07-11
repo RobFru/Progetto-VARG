@@ -6,14 +6,16 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                @auth
+                <li class="nav-item">
+                    <a class="nav-link user-text" href="{{ route('homepage') }}">Hi, {{ Auth::user()->name }}</a>
+                </li>
+                @endauth
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('homepage') }}">Home</a>
                 </li>
                 @auth
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('homepage') }}">Hi, {{ Auth::user()->name }}</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('create.article') }}">Create Articles</a>
                     </li>
@@ -55,10 +57,10 @@
                     </li>
                 @endguest
             </ul>
-            <form class="d-flex" role="search">
+            {{-- <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            </form> --}}
         </div>
     </div>
 </nav>

@@ -4,6 +4,7 @@
 @import './button86.css';
 @import'./card.css';
 @import './navbar.css';
+@import './button.css';
 
 :root {
     --main: #24363F;
@@ -19,12 +20,6 @@ body {
 
 a {
     text-decoration: none;
-}
-
-.btn-custom {
-    background-color: var(--btn)!important;
-    color: var(--txt)!important;
-    border-color: var(--acc)!important;
 }
 
 

@@ -7,6 +7,15 @@
     color: var(--acc)!important;
 }
 
-.navbar a:not(.logo, .dropdown-item) {
+.user-text{
+    color: var(--acc) !important;
+}
+
+.navbar a:not(.logo, .dropdown-item, .user-text) {
     color: var(--txt) !important;
+}
+
+.navbar-nav li {
+    display: flex;
+    justify-content: center;
 }

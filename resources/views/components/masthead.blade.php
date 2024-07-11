@@ -1,9 +1,10 @@
-<header class="masthead">
-    <div class="container h-100">
+<header class="masthead d-none d-md-block">
+    <div class="container h-100 background-custom">
         <div class="row h-100 align-items-center">
             <div class="col-12 text-center">
-                <h1 class="fw-light">{{ $h1 ?? "Da inserire"}}</h1>
-                <p class="lead">{{$p ?? "Da inserire"}}</p>
+                <span class="masthead-title">
+                    {{ $h1 ?? "Da inserire"}}
+                </span>
             </div>
         </div>
     </div>
