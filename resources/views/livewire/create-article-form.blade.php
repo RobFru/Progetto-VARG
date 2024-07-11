@@ -15,7 +15,7 @@
           @enderror
       </div>
       <div class="mb-3">
-          <label for="description" class="form-label">Descption</label>
+          <label for="description" class="form-label">Description</label>
           <textarea type="description" name="description" class="form-control" @error('description') is-invalid @enderror
               cols="30" rows="10" id="description" wire:model.blur="description"></textarea>
           @error('description')

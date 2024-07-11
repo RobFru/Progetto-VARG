@@ -11,16 +11,16 @@ class DatabaseSeeder extends Seeder
 {
 
     public $categories=[
-        'furniture',
-        'watches',
-        'shoes',
-        'clothing',
-        'paintings',
-        'books',
-        'jewelry',
-        'electronics',
-        'vehicles',
-        'music',
+        'Furniture',
+        'Watches',
+        'Shoes',
+        'Clothing',
+        'Paintings',
+        'Books',
+        'Jewelry',
+        'Electronics',
+        'Vehicles',
+        'Music',
 
     ];
     public function run(): void

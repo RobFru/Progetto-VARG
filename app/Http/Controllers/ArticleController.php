@@ -20,8 +20,14 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::orderBy('created_at', 'desc')->paginate(6);
-        return view('index.article', compact('articles'));
+        return view('articles.index', compact('articles'));
     }
+
+    public function show(Article $article){
+
+        return view('articles.show', compact('article'));
+    }
+    
     public static function middleware(): array
     {
         return [

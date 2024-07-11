@@ -16,7 +16,22 @@
           <li class="nav-item">
             <a class="nav-link" href="{{route('create.article') }}">Create Articles</a>
           </li>
-
+          @endauth
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('index.article') }}">Index Articles</a>
+          </li>
+          {{-- dropdown categorie --}}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              @foreach ($categories as $category)
+              <li><a class="dropdown-item" href="">{{$category->name}}</a></li>
+              @endforeach
+            </ul>
+          </li>
+          @auth
           <li class="nav-item">
             <form action="{{route('logout')}}" method="POST">
               @csrf
