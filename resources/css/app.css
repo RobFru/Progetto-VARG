@@ -2,7 +2,7 @@
 @import './style.css';
 @import './masthead.css';
 @import './button86.css';
-
+@import'./card.css';
 :root {
     --main: #ffffff;
     --acc: #2c3e50;

@@ -1,10 +1,10 @@
 Passaggi post clone:
+-php artisan optimize:clear
 -composer i
 -cp .env.example .env
 -php artisan key:gen
 -php artisan migrate
 -npm i
--composer require livewire/livewire
 
 Per DB:
 -winpty mysql -u root -p
@@ -17,7 +17,6 @@ Per DB:
 -php artisan migrate:rollback
 -php artisan migrate
 -php artisan db:seed
-
 
 Per avvio:
 -php artisan serve

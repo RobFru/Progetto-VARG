@@ -11,7 +11,7 @@
           </li>
           @auth
           <li class="nav-item">
-            <a class="nav-link" href="#">Hi, {{ Auth::user()->name }}</a>
+            <a class="nav-link" href="{{route('homepage')}}">Hi, {{ Auth::user()->name }}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('create.article') }}">Create Articles</a>
