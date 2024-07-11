@@ -3,14 +3,28 @@
 @import './masthead.css';
 @import './button86.css';
 @import'./card.css';
+@import './navbar.css';
+
 :root {
-    --main: #ffffff;
-    --acc: #2c3e50;
-    --sec: #3498db;
-    --ter: #f1c40f;
-    --bg: #ecf0f1;
+    --main: #24363F;
+    --acc:#A7915C;
+    --btn: #bb9f60;
+    --bg: #f3f3f3;
+    --txt: #ffffff;
+}
+
+body {
+    background-color: var(--bg);
 }
 
 a {
     text-decoration: none;
 }
+
+.btn-custom {
+    background-color: var(--btn);
+    color: var(--txt);
+}
+
+
+

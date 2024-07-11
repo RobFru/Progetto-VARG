@@ -1,0 +1,12 @@
+.navbar{
+    background-color: var(--main)!important;
+    color: var(--nav)!important;
+}
+
+.logo{
+    color: var(--acc)!important;
+}
+
+.navbar a:not(.logo, .dropdown-item) {
+    color: var(--txt) !important;
+}

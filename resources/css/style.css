@@ -1,5 +1,5 @@
 .alert-custom{
-        --bs-alert-color: var(--bs-warning-text-emphasis);
+        --bs-alert-color: var(--bg)!important;
         --bs-alert-bg: var(--acc)!important;
         --bs-alert-border-color: var(--bs-warning-border-subtle);
         --bs-alert-link-color: var(--bs-warning-text-emphasis);

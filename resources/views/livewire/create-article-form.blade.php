@@ -17,7 +17,7 @@
       <div class="mb-3">
           <label for="description" class="form-label">Description</label>
           <textarea type="description" name="description" class="form-control" @error('description') is-invalid @enderror
-              cols="30" rows="10" id="description" wire:model.blur="description"></textarea>
+               rows="5" id="description" wire:model.blur="description"></textarea>
           @error('description')
               <span class="fst-italic text-danger">{{ $message }}</span>
           @enderror
@@ -43,7 +43,7 @@
           @enderror
       </div>
       <div class="d-flex justify-content-center">
-          <button type="submit" class="btn btn-dark">Insert Articles</button>
+          <button type="submit" class="btn btn-custom">Insert Article</button>
       </div>
       </form>
 </div>
