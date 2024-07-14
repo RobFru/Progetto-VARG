@@ -10,6 +10,8 @@ class Article extends Model
 {
     use HasFactory;
     protected $fillable = [
+        // aggiungere tag per determinare se l'oggetto è nuovo/usato
+        // aggiungere 
         'title','description', 'price', 'category_id', 'user_id',
     ];
 

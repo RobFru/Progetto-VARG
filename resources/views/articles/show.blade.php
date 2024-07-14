@@ -1,12 +1,7 @@
 <x-layout>
     <div class="container-fluid">
-        <div class="row mb-3 mt-3">
-            <div class="col-12 d-flex justify-content-center">
-                <h1>{{ $article->title }}</h1>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6">
+        <div class="row justify-content-center mt-5">
+            <div class="col-12 col-md-3">
                 <div id="carouselExampleIndicators" class="carousel slide">
                     <div class="carousel-indicators">
                       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -33,6 +28,14 @@
                       <span class="visually-hidden">Next</span>
                     </button>
                   </div>
+                  <div class="fs-2 text-center mt-3">${{ $article->price }}</div>
+            </div>
+            <div class="col-12 col-md-4 text-center">
+                <h1>{{ $article->title }}</h1>
+                <p class="fs-3 text-center mt-3">{{ $article->description }}</p>
+            </div>
+            <div class="col-12 col-md-3 vh-100 text-center">
+              <div class="fs-3">placeholder per buy menu</div>
             </div>
         </div>
     </div>
