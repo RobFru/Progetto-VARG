@@ -5,9 +5,9 @@
                 <h1>Articles by category</h1>
             </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-around">
             @forelse ($articles as $article)
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 mt-3">
                 <x-card :article="$article"/>
             </div>
             @empty
