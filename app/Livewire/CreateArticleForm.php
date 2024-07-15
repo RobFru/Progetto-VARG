@@ -31,7 +31,7 @@ class CreateArticleForm extends Component
         ]);
 
         $this->reset();
-        session()->flash('message', 'Articolo inserito correttamente');
+        session()->flash('message', 'The article was inserted correctly');
     }
     public function render()
     {
