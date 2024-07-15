@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\RevisorController;
 
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 
@@ -17,3 +18,11 @@ Route::get('/show/article/{article}', [ArticleController::class, 'show'])->name(
 
 //Categories
 Route::get('/category/{category}', [ArticleController::class, 'byCategory'])->name('byCategory');
+
+//Revisors
+Route::get('/revisor/index', [RevisorController::class, 'index'])->name('revisor.index');
+
+//Accept or Reject Article
+Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('accept');
+
+Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('reject');

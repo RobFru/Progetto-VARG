@@ -31,3 +31,7 @@
 .navbar a:not(.logo, .dropdown-item, .user-text):hover {
     color: var(--acc) !important;
 }
+
+.mt-6{
+    margin-top: 3.5rem;
+}

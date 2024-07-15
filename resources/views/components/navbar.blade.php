@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-expand-xl bg-body-tertiary fixed-top">
+<nav class="navbar navbar-expand-lg navbar-expand-xl bg-body-tertiary fixed-top ">
     <div class="container-fluid">
         <a class="navbar-brand logo" href="#">VARG</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -8,10 +8,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 @auth
-                <li class="nav-item">
-                    {{-- explode splitta il nome in un array di parole e poi prende solo la prima --}}
-                    <a class="nav-link user-text" href="{{ route('homepage') }}">Hi, {{ explode(' ', Auth::user()->name)[0] }}</a>
-                </li>
+                    <li class="nav-item">
+                        {{-- explode splitta il nome in un array di parole e poi prende solo la prima --}}
+                        <a class="nav-link user-text" href="{{ route('homepage') }}">Hi,
+                            {{ explode(' ', Auth::user()->name)[0] }}</a>
+                    </li>
                 @endauth
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('homepage') }}">Home</a>
@@ -58,10 +59,23 @@
                     </li>
                 @endguest
             </ul>
-            {{-- <form class="d-flex" role="search">
+            {{-- collegamento revisore --}}
+            @auth
+                @if (Auth::user()->is_revisor)
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class='nav-item '>
+                        <a class="nav-link" href="{{ route('revisor.index') }}">Revisor</a>
+                    </li>
+                </ul>
+                @endif
+                @endauth
+                {{-- <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form> --}}
+            </div>
         </div>
+    </nav>
+    <div class="mt-6">
     </div>
-</nav>
+        
