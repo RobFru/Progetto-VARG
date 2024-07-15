@@ -15,7 +15,12 @@ class ArticleController extends Controller
     //
     public function create()
     {
-        return view('articles.create');
+        // se l'user è loggato allora ritorna la create
+        if (auth()->check()) {
+            return view('articles.create');
+        }
+        // se l'user non è loggato redirecta alla login page
+        return redirect('/login');
     }
 
     public function index()
