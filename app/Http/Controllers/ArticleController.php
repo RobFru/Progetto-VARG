@@ -26,7 +26,7 @@ class ArticleController extends Controller
     public function index()
     {
         // determina quanti articoli mostra prima di creare una seconda pagina (determina anche l'ordine degli articoli)
-        $articles = Article::orderBy('created_at', 'desc')->paginate(6);
+        $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(6);
         return view('articles.index', compact('articles'));
     }
 
@@ -43,6 +43,7 @@ class ArticleController extends Controller
     }
     public function byCategory(Category $category)
     {
+        $articles = $category->articles->where('is_accepted', true);
         return view('articles.byCategory', ['articles' => $category->articles, 'category' => $category]);
     }
 }
