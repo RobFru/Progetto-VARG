@@ -21,3 +21,6 @@ Per DB:
 Per avvio:
 -php artisan serve
 -npm run dev
+
+Per aggiungere un revisore
+php artisan app:make-user-revisor <emailUtente>

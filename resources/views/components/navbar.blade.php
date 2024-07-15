@@ -64,7 +64,9 @@
                 @if (Auth::user()->is_revisor)
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class='nav-item '>
-                        <a class="nav-link" href="{{ route('revisor.index') }}">Revisor</a>
+                        <a class="nav-link" href="{{ route('revisor.index') }}">Revisor
+                        <span class="nav-link text-white badge rounded-circle btn-custom">{{\App\Models\Article::toBeRevisedCount()}}</span>
+                    </a>
                     </li>
                 </ul>
                 @endif

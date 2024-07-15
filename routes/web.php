@@ -20,9 +20,14 @@ Route::get('/show/article/{article}', [ArticleController::class, 'show'])->name(
 Route::get('/category/{category}', [ArticleController::class, 'byCategory'])->name('byCategory');
 
 //Revisors
-Route::get('/revisor/index', [RevisorController::class, 'index'])->name('revisor.index');
+Route::get('/revisor/index', [RevisorController::class, 'index'])->middleware('isRevisor')->name('revisor.index');
 
 //Accept or Reject Article
 Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('accept');
 
 Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('reject');
+
+//Mail
+Route::get('/revisor/request', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
+//Aggiunto middleware perché non c'era nella spiegazione
+Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->middleware('auth')->name('make.revisor');

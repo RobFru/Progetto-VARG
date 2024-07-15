@@ -4,6 +4,17 @@ title="VARG">
     <x-masthead
     h1="VARG"
     />
+    @if (session()->has('errorMessage'))
+    <div class="alert alert-warning">
+        {{ session('errorMessage') }}
+            </div>
+        @endif
+    
+    @if (session()->has('message'))
+        <div class="alert alert-success" role="alert">
+            {{session('message')}}
+        </div>
+    @endif    
 <div class="container-fluid">
     <div class="row mt-3">
         {{-- <div class="col-12"> --}}
