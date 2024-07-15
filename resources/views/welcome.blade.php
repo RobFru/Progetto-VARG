@@ -22,7 +22,7 @@ title="VARG">
         </div>
     </div>
     <div class="row">
-        <div class="col-12 mt-3 mb-3 d-flex justify-content-center">
+        <div class="col-12 mt-5 mb-3 d-flex justify-content-center">
             <a href="{{route('create.article')}}"><button type="submit" class="button-86" role="button">Create Your Article</button></a>
         </div>
     </div>
