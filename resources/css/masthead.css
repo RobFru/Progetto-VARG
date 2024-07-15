@@ -8,6 +8,7 @@
 }
 
 .masthead-title {
+width: max-content;
 color: var(--main);
 font-size: 150px;
 /* From https://css.glass */
