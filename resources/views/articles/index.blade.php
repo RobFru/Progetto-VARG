@@ -10,7 +10,7 @@
     </div>
     <div class="row">
         @forelse ($articles as $article)
-            <div class="col-12 col-md-4 mb-5">
+            <div class="col-12 col-md-4 mb-5 d-flex justify-content-evenly">
                 <x-card :article="$article"/>
             </div>
             @empty

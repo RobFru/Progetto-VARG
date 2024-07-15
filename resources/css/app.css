@@ -6,21 +6,5 @@
 @import './navbar.css';
 @import './button.css';
 
-:root {
-    --main: #24363F;
-    --acc:#A7915C;
-    --btn: #bb9f60;
-    --bg: #f3f3f3;
-    --txt: #ffffff;
-}
-
-body {
-    background-color: var(--bg);
-}
-
-a {
-    text-decoration: none;
-}
-
 
 

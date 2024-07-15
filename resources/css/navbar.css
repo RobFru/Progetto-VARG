@@ -4,11 +4,11 @@
 }
 
 .logo{
-    color: var(--acc)!important;
+    color: var(--btn)!important;
 }
 
 .user-text{
-    color: var(--acc) !important;
+    color: var(--btn) !important;
 }
 
 .navbar a:not(.logo, .dropdown-item, .user-text) {
@@ -18,4 +18,16 @@
 .navbar-nav li {
     display: flex;
     justify-content: center;
+}
+
+.nav-link {
+    font-size: large !important;
+}
+
+.nav-link:hover {
+    color: var(--acc) !important;
+}
+
+.navbar a:not(.logo, .dropdown-item, .user-text):hover {
+    color: var(--acc) !important;
 }

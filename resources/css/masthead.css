@@ -4,12 +4,18 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('../../public/media/background2.webp');
+    background-image: url('../../public/media/background3.jpg');
 }
 
 .masthead-title {
 color: var(--main);
 font-size: 150px;
-position: absolute;
-top: 510px;
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.13);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(11.4px);
+/* filter: blur(11.4px); */
+-webkit-backdrop-filter: blur(11.4px);
+border: 1px solid rgba(255, 255, 255, 0.53);
 }

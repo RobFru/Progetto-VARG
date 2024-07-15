@@ -25,6 +25,7 @@ class ArticleController extends Controller
 
     public function index()
     {
+        // determina quanti articoli mostra prima di creare una seconda pagina (determina anche l'ordine degli articoli)
         $articles = Article::orderBy('created_at', 'desc')->paginate(6);
         return view('articles.index', compact('articles'));
     }

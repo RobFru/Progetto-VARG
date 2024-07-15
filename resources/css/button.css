@@ -1,11 +1,22 @@
 .btn-custom {
     background-color: var(--btn)!important;
     color: var(--txt)!important;
-    border-color: var(--acc)!important;
+    border-color: var(--btn)!important;
 }
 .btn-custom:hover {
     background-color: var(--acc)!important;
     color: var(--txt)!important;
     border-color: var(--acc)!important;
+    transform: scale(1.1);
+}
+.btn-custom-2 {
+    background-color: var(--main)!important;
+    color: var(--txt)!important;
+    border-color: var(--main)!important;
+}
+.btn-custom-2:hover {
+    background-color: var(--main)!important;
+    color: var(--txt)!important;
+    border-color: var(--main)!important;
     transform: scale(1.1);
 }

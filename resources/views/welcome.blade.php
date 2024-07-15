@@ -22,9 +22,9 @@ title="VARG">
         </div>
     </div>
     {{-- disattivato momentaneamente perchè mette una side scrollbar --}}
-    {{-- <div class="row">
+    <div class="row">
         <div class="col-12 mt-5 mb-3 d-flex justify-content-center">
             <a href="{{route('create.article')}}"><button type="submit" class="button-86" role="button">Create Your Article</button></a>
         </div>
-    </div> --}}
+    </div>
 </x-layout>
