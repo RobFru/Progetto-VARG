@@ -9,7 +9,8 @@
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 @auth
                 <li class="nav-item">
-                    <a class="nav-link user-text" href="{{ route('homepage') }}">Hi, {{ Auth::user()->name }}</a>
+                    {{-- explode splitta il nome in un array di parole e poi prende solo la prima --}}
+                    <a class="nav-link user-text" href="{{ route('homepage') }}">Hi, {{ explode(' ', Auth::user()->name)[0] }}</a>
                 </li>
                 @endauth
                 <li class="nav-item">
