@@ -6,11 +6,13 @@
 }
 
 /* media query per schermi sopra a 1440px */
-/* @media screen and (min-width: 1439px) {
-    .masthead {
-        min-height: 1200px;
+@media screen and (min-width: 2751px ) {
+    
+    .top-custom{
+        top:80% !important;
+
     }
-} */
+}
 
 .masthead-title {
     top: 70%;

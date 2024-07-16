@@ -4,7 +4,7 @@ Side menu?
 
 cambiare messaggi di errore
 
-carousel in homepage
+cambiare font 
 
 pulsante di registarzione nella login page
 

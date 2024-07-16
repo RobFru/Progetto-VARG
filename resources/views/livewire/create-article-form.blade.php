@@ -30,6 +30,12 @@
               <span class="text-danger">{{ $message }}</span>
           @enderror
       </div>
+
+      <div class="mb-3">
+        <label for="img" class="form-label">Immagine:</label>
+        <input type="file" name='img' class="form-control" id="img">
+      </div>
+      
       <div class="mb-3">
           <select id="category" wire:model.blur="category" class="form-control"
               @error('category') is-invalid @enderror>

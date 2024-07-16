@@ -27,12 +27,12 @@
                     <a class="nav-link fw-bold" href="{{ route('index.article') }}">Index Articles</a>
                 </li>
                 {{-- dropdown categorie --}}
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                <li class="nav-item dropdown d-md-none d-flex flex-column text-center">
+                    <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Categories
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu text-center">
                         @foreach ($categories as $category)
                             <li><a class="dropdown-item"
                                     href="{{ route('byCategory', ['category' => $category]) }}">{{ $category->name }}</a>

@@ -20,15 +20,15 @@
                     ipsum dolor sit amet consectetur adipisicing.</span>
             </div>
             <div class="carousel-item ">
-                <img src="./media/background3.jpg" class="d-block w-100" alt="...">
+                <img src="./media/carousel2.jpg" class="d-block w-100" alt="...">
 
             </div>
             <div class="carousel-item ">
-                <img src="./media/background3.jpg" class="d-block w-100" alt="...">
+                <img src="./media/carousel3.jpg" class="d-block w-100" alt="...">
 
             </div>
             <div class="carousel-item ">
-                <img src="./media/background3.jpg" class="d-block w-100" alt="...">
+                <img src="./media/carousel4.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
     </div>
