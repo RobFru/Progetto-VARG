@@ -9,6 +9,7 @@
 </head>
 <body>
     <x-navbar/>
+    <x-second-nav/>
     {{ $slot }}
     <x-footer/>
     </body>

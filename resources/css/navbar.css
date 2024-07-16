@@ -1,13 +1,13 @@
-.navbar{
-    background-color: var(--main)!important;
-    color: var(--nav)!important;
+.navbar {
+    background-color: var(--main) !important;
+    color: var(--nav) !important;
 }
 
-.logo{
-    color: var(--btn)!important;
+.logo {
+    color: var(--btn) !important;
 }
 
-.user-text{
+.user-text {
     color: var(--btn) !important;
 }
 
@@ -32,6 +32,55 @@
     color: var(--acc) !important;
 }
 
-.mt-6{
+.mt-6 {
     margin-top: 3.5rem;
+}
+
+/* NAVBAR SECONDARIA */
+
+.navbar-secondaria {
+    padding: 0; /* Ridotto il padding sopra e sotto */
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.navbar-secondaria ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.navbar-secondaria li {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-secondaria a {
+    display: block;
+    color: white;
+    padding: 5px 0; /* Ridotto il padding interno ai link */
+    text-decoration: none;
+    background-color: var(--acc);
+    border: 1px solid #555;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.navbar-secondaria a:hover {
+    background-color: var(--main);
+}
+
+/* Aggiungi questo stile per rimuovere lo spazio tra bottoni e navbar */
+.navbar-secondaria li a {
+    margin: 0;
+    padding: 3px 0; /* Riduce il padding per rendere i bottoni più piccoli */
+    border: none; /* Rimuove eventuali bordi che causano spazio extra */
 }
