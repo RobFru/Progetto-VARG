@@ -33,7 +33,13 @@
 }
 
 .mt-6 {
-    margin-top: 3.5rem;
+    margin-top: 5.5rem;
+}
+
+.navbar-toggler {
+    color: var(--main) !important;
+    background-color: var(--acc) !important;
+    border: var(--acc) solid var(--acc);
 }
 
 /* NAVBAR SECONDARIA */

@@ -1,23 +1,52 @@
 .masthead {
-    height: 50vh;
-    min-height: 1000px;
+    height: 100vh;
+    min-height: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     /* background-image: url('../../public/media/background3.jpg'); */
 }
 
+/* media query per schermi sopra a 1440px */
+@media screen and (min-width: 1439px) {
+    .masthead {
+        min-height: 1200px;
+    }
+}
+
 .masthead-title {
-/* width: max-content; */
-top: 70%;
-color: var(--main);
-font-size: 150px;
-/* From https://css.glass */
-background: rgba(255, 255, 255, 0.13);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(11.4px);
-/* filter: blur(11.4px); */
--webkit-backdrop-filter: blur(11.4px);
-border: 1px solid rgba(255, 255, 255, 0.53);
+    /* width: max-content; */
+    top: 70%;
+    color: var(--main);
+    font-size: 150px;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.13);
+    border-radius: 30px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(11.4px);
+    /* filter: blur(11.4px); */
+    -webkit-backdrop-filter: blur(11.4px);
+}
+
+.masthead-subtitle {
+    /* width: max-content; */
+    color: var(--main);
+    font-size: 40px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    backdrop-filter: blur(11.4px);
+    -webkit-backdrop-filter: blur(11.4px);
+}
+
+.top-custom {
+    top: 60%;
+}
+
+.insert-box {
+    top: 35%;
+    left: 69%;
+    background: #24363feb;
+    color: var(--bg);
+    border-radius: 10px;
 }

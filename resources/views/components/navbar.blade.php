@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-expand-xl bg-body-tertiary fixed-top ">
+<span class="fixed-top">
+<nav class="navbar navbar-expand-lg navbar-expand-xl bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand logo" href="#"> <img src="/media/logolupo.png" alt="Logo" style="height: 30px; margin-right: 10px;">VARG</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -73,11 +74,26 @@
                 @endauth
                 <form class="d-flex" role="search" method="GET" action="{{route('article.search')}}">
                 <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <button class="btn btn-custom-3" type="submit">Search</button>
             </form>
             </div>
         </div>
     </nav>
+    {{-- navbar 2 --}}
+    <div class="d-none d-md-block">
+        <nav class="navbar navbar-secondaria">
+            <ul class="navbar-secondaria mx-auto mb-2 mb-lg-0">
+                @foreach ($categories as $category)
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('byCategory', ['category' => $category]) }}">
+                            {{ $category->name }}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+        </nav>
+    </div>
+</span>
     <div class="mt-6">
     </div>
         

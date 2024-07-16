@@ -8,6 +8,5 @@ carousel in homepage
 
 pulsante di registarzione nella login page
 
-change revisor button
 
 V=VENDI, A=ACQUISTA, R=RICERCA G=GODITI OGNI ACQUISTO: Vendi, acquista, ricerca e goditi ogni acquisto. to add to carousel
