@@ -1,5 +1,4 @@
 <header class="masthead d-none d-md-block">
-    {{-- <span class="d-flex z-1 position-absolute  translate-middle start-50 masthead-title">VARG</span> --}}
     <span class="d-flex container-fluid">
         <span class="row">
             <span class="fs-2 col-2 d-flex z-1 position-absolute translate-middle insert-box">
