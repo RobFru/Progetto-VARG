@@ -19,4 +19,12 @@ class PublicController extends Controller
     {
         return view('create.articles');
     }
+
+    // serchered bar
+    public function searchArticles(Request $request)
+    {
+        $query = $request->input('query');
+        $articles = Article::search($query)->where('is_accepted', true)->paginate(6);
+        return view('articles.searched', ['articles' => $articles, 'query' => $query]);
+    }
 }
