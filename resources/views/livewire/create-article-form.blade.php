@@ -32,7 +32,7 @@
       </div>
 
       <div class="mb-3">
-        <label for="img" class="form-label">Immagine:</label>
+        <label for="img" class="form-label">Image:</label>
         <input type="file" name='img' class="form-control" id="img">
       </div>
       

@@ -13,21 +13,20 @@
     </span>
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
+            <div class="carousel-item active" data-bs-interval="4000">
                 <img src="./media/background3.jpg" class="d-block w-100" alt="...">
                 <span
-                    class="masthead-subtitle d-flex z-1 position-absolute  translate-middle start-50 top-custom">Lorem,
-                    ipsum dolor sit amet consectetur adipisicing.</span>
+                    class="fs-custom masthead-subtitle d-flex z-1 position-absolute  translate-middle start-50 top-custom display-font">V for Value</span>
             </div>
-            <div class="carousel-item ">
+            <div class="carousel-item" data-bs-interval="4000">
                 <img src="./media/carousel2.jpg" class="d-block w-100" alt="...">
 
             </div>
-            <div class="carousel-item ">
+            <div class="carousel-item" data-bs-interval="4000">
                 <img src="./media/carousel3.jpg" class="d-block w-100" alt="...">
 
             </div>
-            <div class="carousel-item ">
+            <div class="carousel-item" data-bs-interval="4000">
                 <img src="./media/carousel4.jpg" class="d-block w-100" alt="...">
             </div>
         </div>

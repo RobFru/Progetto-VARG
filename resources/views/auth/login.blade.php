@@ -33,5 +33,9 @@
                 </ul>
             </div>
         @endif
+        <div class="d-flex justify-content-center mt-3">or</div>
+        <div class="d-flex justify-content-center mt-3">
+            <a href="{{route('register')}}" class="btn btn-custom">Create account</a>
+        </div>
     </div>
 </x-layout>

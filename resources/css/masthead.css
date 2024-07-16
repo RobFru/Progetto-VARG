@@ -55,3 +55,7 @@
 .carousel-item{
     height: 90vh;
 }
+
+.fs-custom {
+    font-size: 85px !important;
+}

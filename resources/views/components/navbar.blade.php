@@ -1,7 +1,7 @@
 <span class="fixed-top">
 <nav class="navbar navbar-expand-lg navbar-expand-xl bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand logo" href="#"> <img src="/media/logolupo.png" alt="Logo" style="height: 30px; margin-right: 10px;">VARG</a>
+        <a class="navbar-brand logo display-font" href="#"> <img src="/media/logolupo.png" alt="Logo" style="height: 30px; margin-right: 10px;">VARG</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -16,15 +16,15 @@
                     </li>
                 @endauth
                 <li class="nav-item">
-                    <a class="nav-link fw-bold active" aria-current="page" href="{{ route('homepage') }}">Home</a>
+                    <a class="nav-link active m-none me-md-3" aria-current="page" href="{{ route('homepage') }}">Home</a>
                 </li>
                 @auth
                     <li class="nav-item">
-                        <a class="nav-link fw-bold" href="{{ route('create.article') }}">Create Articles</a>
+                        <a class="nav-link m-none me-md-3" href="{{ route('create.article') }}">Create Articles</a>
                     </li>
                 @endauth
                 <li class="nav-item">
-                    <a class="nav-link fw-bold" href="{{ route('index.article') }}">Index Articles</a>
+                    <a class="nav-link m-none me-md-3" href="{{ route('index.article') }}">Index Articles</a>
                 </li>
                 {{-- dropdown categorie --}}
                 <li class="nav-item dropdown d-md-none d-flex flex-column text-center">
@@ -47,16 +47,16 @@
                     <li class="nav-item">
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
-                            <button class="nav-link text-light">Logout</button>
+                            <button class="nav-link text-light m-none me-md-3">Logout</button>
                         </form>
                     </li>
                 @endauth
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link fw-bold" href="{{ route('login') }}">Login</a>
+                        <a class="nav-link m-none me-md-3" href="{{ route('login') }}">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-bold" href="{{ route('register') }}">Register</a>
+                        <a class="nav-link m-none me-md-3" href="{{ route('register') }}">Register</a>
                     </li>
                 @endguest
             </ul>

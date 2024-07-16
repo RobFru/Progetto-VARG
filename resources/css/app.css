@@ -6,5 +6,16 @@
 @import './navbar.css';
 @import './button.css';
 
+* {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.display-font {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
 
