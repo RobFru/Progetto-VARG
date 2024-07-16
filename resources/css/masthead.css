@@ -4,11 +4,12 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('../../public/media/background3.jpg');
+    /* background-image: url('../../public/media/background3.jpg'); */
 }
 
 .masthead-title {
-width: max-content;
+/* width: max-content; */
+top: 70%;
 color: var(--main);
 font-size: 150px;
 /* From https://css.glass */
