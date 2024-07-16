@@ -48,12 +48,8 @@
     border-radius: 10px;
 }
 
-.carousel-inner{
-    height: 90vh;
-}
-
-.carousel-item{
-    height: 90vh;
+.carousel-custom {
+    height: 90vh!important;
 }
 
 .fs-custom {

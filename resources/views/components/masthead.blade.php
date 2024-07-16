@@ -12,21 +12,21 @@
         </span>
     </span>
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="4000">
+        <div class="carousel-inner carousel-custom">
+            <div class="carousel-item carousel-custom active" data-bs-interval="4000">
                 <img src="./media/background3.jpg" class="d-block w-100" alt="...">
-                <span
-                    class="fs-custom masthead-subtitle d-flex z-1 position-absolute  translate-middle start-50 top-custom display-font">V for Value</span>
+                {{-- <span
+                    class="fs-custom masthead-subtitle d-flex z-1 position-absolute  translate-middle start-50 top-custom display-font">V for Value</span> --}}
             </div>
-            <div class="carousel-item" data-bs-interval="4000">
+            <div class="carousel-item carousel-custom" data-bs-interval="4000">
                 <img src="./media/carousel2.jpg" class="d-block w-100" alt="...">
 
             </div>
-            <div class="carousel-item" data-bs-interval="4000">
+            <div class="carousel-item carousel-custom" data-bs-interval="4000">
                 <img src="./media/carousel3.jpg" class="d-block w-100" alt="...">
 
             </div>
-            <div class="carousel-item" data-bs-interval="4000">
+            <div class="carousel-item carousel-custom" data-bs-interval="4000">
                 <img src="./media/carousel4.jpg" class="d-block w-100" alt="...">
             </div>
         </div>

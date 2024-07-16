@@ -25,3 +25,7 @@
     color: var(--txt)!important;
     border-color: var(--acc)!important;
 }
+
+.btn-no-border {
+    border: none;
+}

@@ -37,3 +37,16 @@ a {
 .page-link.active, .active > .page-link {
     background-color: var(--acc) !important;
 }
+
+.separate{
+    border-bottom: 3px solid var(--btn);
+}
+
+.buy_logo {
+    height: 55px;
+    width: auto;
+}
+.buy_logo:hover {
+    border: 4px solid var(--acc);
+    border-radius: 50%;
+}
