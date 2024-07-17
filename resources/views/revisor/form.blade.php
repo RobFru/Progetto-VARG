@@ -9,10 +9,10 @@
                             <h1>Send us a request</h1>
                         </div>
                     </div>
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                         <label for="email" class="form-label">Email address</label>
                         <input type="email" name="email" class="form-control" id="email" value="{{ auth()->user()->email }}" readonly>
-                    </div>
+                    </div> --}}
                     <div class="mb-3">
                         <label for="description" class="form-label">Tell us why you want to work with us</label>
                         <textarea type="description" cols="20" rows="10" name="description" class="form-control" id="description"></textarea>
