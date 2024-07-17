@@ -38,3 +38,6 @@ Route::get('/revisor/form', [RevisorController::class, 'formRevisor'])->middlewa
 
 //Search
 Route::get('/search/article', [PublicController::class, 'searchArticles'])->name('article.search');
+
+//Language
+Route::post('/language/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');

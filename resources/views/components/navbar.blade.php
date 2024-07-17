@@ -24,7 +24,7 @@
                     </li>
                 @endauth
                 <li class="nav-item">
-                    <a class="nav-link m-none me-md-3" href="{{ route('index.article') }}">Index Articles</a>
+                    <a class="nav-link m-none me-md-3" href="{{ route('index.article') }}">{{ __('ui.indexArticles') }}</a>
                 </li>
                 {{-- dropdown categorie --}}
                 <li class="nav-item dropdown d-md-none d-flex flex-column text-center">
@@ -53,10 +53,10 @@
                 @endauth
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link m-none me-md-3" href="{{ route('login') }}">Login</a>
+                        <a class="nav-link m-none me-md-3" href="{{ route('login') }}">{{ __('ui.login') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link m-none me-md-3" href="{{ route('register') }}">Register</a>
+                        <a class="nav-link m-none me-md-3" href="{{ route('register') }}">{{ __('ui.register') }}</a>
                     </li>
                 @endguest
             </ul>
@@ -74,8 +74,11 @@
                 @endauth
                 <form class="d-flex" role="search" method="GET" action="{{route('article.search')}}">
                 <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
-                <button class="btn btn-custom-3" type="submit">Search</button>
+                <button class="btn btn-custom-3" type="submit">{{ __('ui.search') }}</button>
             </form>
+            <x-_locale lang="en"/>
+            <x-_locale lang="it"/>
+            <x-_locale lang="es"/>
             </div>
         </div>
     </nav>
@@ -86,7 +89,7 @@
                 @foreach ($categories as $category)
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('byCategory', ['category' => $category]) }}">
-                            {{ $category->name }}
+                            {{__("ui.$category->name") }}
                         </a>
                     </li>
                 @endforeach
