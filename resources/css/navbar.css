@@ -50,6 +50,7 @@
     margin: 0;
     width: 100%;
     box-sizing: border-box;
+    /* background-color: var(--acc) !important; */
 }
 
 .navbar-secondaria ul {
@@ -60,6 +61,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    /* width:80% */
     box-sizing: border-box;
 }
 
