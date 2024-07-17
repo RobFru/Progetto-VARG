@@ -2,8 +2,7 @@ Cose da aggiungere:
 
 Side menu?
 
-cambiare font (poppins / titolo)
-
 V=VENDI, A=ACQUISTA, R=RICERCA G=GODITI OGNI ACQUISTO: Vendi, acquista, ricerca e goditi ogni acquisto. to add to carousel
 
-collegare description di form work with us alla mail
+sistemare bandiere su navbar
+cambiare lingua dove manca
