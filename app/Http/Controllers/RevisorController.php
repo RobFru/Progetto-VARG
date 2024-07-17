@@ -23,10 +23,6 @@ class RevisorController extends Controller
         return view('revisor.index', compact('article_to_check', 'article_to_rollback'));
     }
 
-    public function indexLast()
-    {
-    }
-
     public function accept(Article $article)
     {
         $article->setAccepted(true);
