@@ -30,7 +30,7 @@ Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('r
 Route::patch('/goBack/{article}', [RevisorController::class, 'goBack'])->name('goBack');
 
 //Mail
-Route::get('/revisor/request', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
+Route::post('/revisor/request', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
 //Aggiunto middleware perché non c'era nella spiegazione
 Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->middleware('auth')->name('make.revisor');
 //Become Revisor

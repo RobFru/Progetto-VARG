@@ -11,7 +11,7 @@
             <p>Name: {{ $user->name }}</p>
             <p>Email: {{ $user->email }}</p>
             <p>Do you want to make them a revisor? Click here : </p>
-            <P>Description: {{ $user->description }}</P>
+            <P>Description: {{ $info }}</P>
             <a href="{{route('make.revisor', compact('user'))}}">Make a revisor</a>
         </div>
     </body>

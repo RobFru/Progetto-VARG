@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
-                <form method="GET" action="{{ route('become.revisor') }}">
+                <form method="POST" action="{{ route('become.revisor') }}">
                     @csrf
                     <div class="mt-3 mb-3 row justify-content-center">
                         <div class="col-12 text-center">

@@ -49,9 +49,9 @@ class RevisorController extends Controller
         ->back()
         ->with('message', "The article $article->title was rollbacked successfully");
     }
-    public function becomeRevisor()
+    public function becomeRevisor(Request $request)
     {
-        Mail::to('aulabvarg@gmail.com')->send(new BecomeRevisor(Auth::user()));
+        Mail::to('aulabvarg@gmail.com')->send(new BecomeRevisor(Auth::user(), $request->input('description')));
         return redirect()->route('homepage')->with('message', 'Your request has been sent successfully');
     }
     public function makeRevisor(User $user)
