@@ -73,7 +73,7 @@
                 @endif
                 @endauth
                 <form class="d-flex" role="search" method="GET" action="{{route('article.search')}}">
-                <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
+                <input class="form-control me-2 shadow" type="search" name="query" placeholder="Search" aria-label="Search">
                 <button class="btn btn-custom-3" type="submit">{{ __('ui.search') }}</button>
             </form>
             <x-_locale lang="en"/>

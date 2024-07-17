@@ -8,11 +8,17 @@
     </div>
     @if ($article_to_check)
         <div class="row justify-content-center">
-            @for ($i = 0; $i < 6; $i++)
+            @if ($article_to_check->images->count())
+            @foreach ($article_to_check->images as $key=> $image)
                 <div class="col-6 col-md-4">
-                    <img src="https://picsum.photos/400" class="d-block w-100" alt="...">
+                    <img src="{{ Storage::url($image->path)}}" class="d-block w-100" alt="img {{ $key+1 }} of {{ $article_to_check->title }}">
                 </div>
-            @endfor
+            @endforeach
+            @else
+            <div class="col-12 d-flex justify-content-center">
+                <h3>No images</h3>
+            </div>
+            @endif
         </div>
         </div>
         <div class="col-md-4 ps-4 d-flex flex-column justify-content-between">

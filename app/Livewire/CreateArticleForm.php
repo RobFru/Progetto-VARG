@@ -38,6 +38,13 @@ class CreateArticleForm extends Component
             'user_id' => Auth::id()
         ]);
 
+        if (count($this->images) > 0) {
+            foreach ($this->images as $image) {
+                $this->article->images()->create([
+                    'path' => $image->store('images', 'public')
+                ]);
+            }
+        }
         $this->reset();
         session()->flash('message', 'The article was inserted correctly');
     }
@@ -46,17 +53,23 @@ class CreateArticleForm extends Component
         return view('livewire.create-article-form');
     }
 
-    // validation rules
+    // logica delle immagini
     public function updatedTemporaryImages()
     {
         if ($this->validate([
             'temporary_images.*' => 'image|max:1024',
             'temporary_images' => 'max:6'
-            ])) {
-                foreach ($this->temporary_images as $image) {
-                    $this->images[] = $image;
-                }
+        ])) {
+            foreach ($this->temporary_images as $image) {
+                $this->images[] = $image;
             }
         }
-            
+    }
+
+    public function removeImage($key)
+    {
+        if(in_array($key, array_keys($this->images))){
+            unset($this->images[$key]);
+        }
+    }
 }
