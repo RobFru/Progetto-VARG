@@ -24,23 +24,32 @@
                 <p class="h6">{{ $article_to_check->description }}</p>
             </div>
             <div class="d-flex pb-4 justify-content-around">
-                <form action="{{route('reject', ['article' => $article_to_check])}}" method="POST">
+                <form action="{{ route('reject', ['article' => $article_to_check]) }}" method="POST">
                     @csrf
                     @method('PATCH')
                     <button class="btn btn-custom-2">Reject</button>
                 </form>
-                <form action="{{route('accept', ['article' => $article_to_check])}}" method="POST">
+                <form action="{{ route('accept', ['article' => $article_to_check]) }}" method="POST">
                     @csrf
                     @method('PATCH')
                     <button class=" btn btn-custom-2">Accept</button>
-                </form>               
+                </form>
+                @if ($article_to_rollback)
+                <form action="{{ route('goBack', ['article' => $article_to_rollback]) }}" method="POST">
+                    @csrf
+                    @method('PATCH')
+                    <button class=" btn btn-custom-2">Rollback</button>
+                </form>
+                @else
+                <h4>No rollback</h4>
+                @endif
             </div>
             @if (session()->has('message'))
-            <div class="alert alert-custom alert-dismissible fade show" role="alert">
-            <strong>{{session('message')}}</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
+                <div class="alert alert-custom alert-dismissible fade show" role="alert">
+                    <strong>{{ session('message') }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
         </div>
         </div>
     @else

@@ -17,24 +17,37 @@ class RevisorController extends Controller
 
     public function index()
     {
-        $article_to_check=Article::where('is_accepted', null)->first();
-        return view('revisor.index', compact('article_to_check'));
+        $article_to_check = Article::where('is_accepted', null)->first();
+        // TestVittorio per il rollback
+        $article_to_rollback=Article::whereNotNull('is_accepted')->orderBy('id', 'desc')->first();
+        return view('revisor.index', compact('article_to_check', 'article_to_rollback'));
+    }
+
+    public function indexLast()
+    {
     }
 
     public function accept(Article $article)
     {
         $article->setAccepted(true);
         return redirect()
-        ->back()
-        ->with('message', "The article $article->title was accepted successfully");
+            ->back()
+            ->with('message', "The article $article->title was accepted successfully");
     }
 
     public function reject(Article $article)
     {
         $article->setAccepted(false);
         return redirect()
+            ->back()
+            ->with('message', "The article $article->title was rejected successfully");
+    }
+
+    public function goBack(Article $article){
+        $article->setAccepted(null);
+        return redirect()
         ->back()
-        ->with('message', "The article $article->title was rejected successfully");
+        ->with('message', "The article $article->title was rollbacked successfully");
     }
     public function becomeRevisor()
     {
@@ -45,5 +58,10 @@ class RevisorController extends Controller
     {
         Artisan::call('app:make-user-revisor', ['email' => $user->email]);
         return redirect()->back();
+    }
+
+    public function formRevisor()
+    {
+        return view('revisor.form');
     }
 }
