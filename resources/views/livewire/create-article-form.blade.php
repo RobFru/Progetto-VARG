@@ -4,7 +4,7 @@
         <strong>{{session('message')}}</strong>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-
+    
     @endif
     {{-- title --}}
     <form wire:submit="store">
@@ -61,8 +61,8 @@
                     </div>
                 </div>
             </div>
-            @endif
         </div>
+        @endif
         {{-- select category --}}
         <div class="mb-3">
             <select id="category" wire:model.blur="category" class="form-control"
