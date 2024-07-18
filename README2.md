@@ -6,4 +6,6 @@ sistemare bandiere su navbar
 
 cambiare lingua dove manca
 
-bottone go back più grande in pagina del revisor
+sistemare tabella
+
+possibile titolo su carousel iniziale della homepage

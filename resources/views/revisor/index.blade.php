@@ -23,41 +23,43 @@
             @endif
         </div>
         </div>
-        <div class="col-md-4 ps-4 d-flex flex-column justify-content-between">
-            <div>
-                <h1>{{ $article_to_check->title }}</h1>
-                <h3>Author: {{ $article_to_check->user->name }}</h3>
-                <h4>${{ $article_to_check->price }}</h4>
-                <h4 class="fst-italic text-muted">#{{ $article_to_check->category->name }}</h4>
-                <p class="h6">{{ $article_to_check->description }}</p>
-            </div>
-            <div class="d-flex pb-4 justify-content-around">
-                <form action="{{ route('reject', ['article' => $article_to_check]) }}" method="POST">
-                    @csrf
-                    @method('PATCH')
-                    <button class="btn btn-custom-2">Reject</button>
-                </form>
-                <form action="{{ route('accept', ['article' => $article_to_check]) }}" method="POST">
-                    @csrf
-                    @method('PATCH')
-                    <button class=" btn btn-custom-2">Accept</button>
-                </form>
-                @if ($article_to_rollback)
-                    <form action="{{ route('goBack', ['article' => $article_to_rollback]) }}" method="POST">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-4 ps-4 d-flex flex-column justify-content-between">
+                <div>
+                    <h1>{{ $article_to_check->title }}</h1>
+                    <h3>Author: {{ $article_to_check->user->name }}</h3>
+                    <h4>${{ $article_to_check->price }}</h4>
+                    <h4 class="fst-italic text-muted">#{{ $article_to_check->category->name }}</h4>
+                    <p class="h6">{{ $article_to_check->description }}</p>
+                </div>
+                <div class="d-flex pb-4 justify-content-around">
+                    <form action="{{ route('reject', ['article' => $article_to_check]) }}" method="POST">
                         @csrf
                         @method('PATCH')
-                        <button class=" btn btn-custom-2">Rollback</button>
+                        <button class="btn btn-danger">Reject</button>
                     </form>
-                @else
-                    <h4>No rollback</h4>
+                    <form action="{{ route('accept', ['article' => $article_to_check]) }}" method="POST">
+                        @csrf
+                        @method('PATCH')
+                        <button class=" btn btn-success">Accept</button>
+                    </form>
+                    @if ($article_to_rollback)
+                        <form action="{{ route('goBack', ['article' => $article_to_rollback]) }}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <button class=" btn btn-custom-2">Rollback</button>
+                        </form>
+                    @else
+                        <h4>No rollback</h4>
+                    @endif
+                </div>
+                @if (session()->has('message'))
+                    <div class="alert alert-custom alert-dismissible fade show" role="alert">
+                        <strong>{{ session('message') }}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                 @endif
             </div>
-            @if (session()->has('message'))
-                <div class="alert alert-custom alert-dismissible fade show" role="alert">
-                    <strong>{{ session('message') }}</strong>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            @endif
         </div>
         </div>
     @else
@@ -104,7 +106,7 @@
                                     @else
                                         <form action="{{ route('revisor.undoArticle', $article) }}" method="POST">
                                             @csrf
-                                            <button type="submit" class="btn btn-secondary">Redirect for
+                                            <button type="submit" class="btn btn-custom-2">Redirect for
                                                 review</button>
                                         </form>
                                     @endif

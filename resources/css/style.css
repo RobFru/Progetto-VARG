@@ -66,5 +66,6 @@ a {
 
 /* tabella */
 .table-custom {
-    background-color: var(--btn) !important;
+    --bs-table-bg: var(--acc) !important;
+    --bs-table-color: var(--bg) !important;
 }
