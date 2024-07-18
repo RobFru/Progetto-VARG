@@ -7,5 +7,3 @@ sistemare bandiere su navbar
 cambiare lingua dove manca
 
 bottone go back più grande in pagina del revisor
-
-bottone rollback in pagina revisor anche quando non ci sono articoli

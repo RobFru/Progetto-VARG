@@ -20,7 +20,8 @@ class RevisorController extends Controller
         $article_to_check = Article::where('is_accepted', null)->first();
         // TestVittorio per il rollback
         $article_to_rollback=Article::whereNotNull('is_accepted')->orderBy('id', 'desc')->first();
-        return view('revisor.index', compact('article_to_check', 'article_to_rollback'));
+        $articles = Article::all();
+        return view('revisor.index', compact('article_to_check', 'article_to_rollback', 'articles'));
     }
 
     public function accept(Article $article)
@@ -41,6 +42,14 @@ class RevisorController extends Controller
 
     public function goBack(Article $article){
         $article->setAccepted(null);
+        return redirect()
+        ->back()
+        ->with('message', "The article $article->title was rollbacked successfully");
+    }
+
+    public function undoArticle(Article $article){
+        $article->setAccepted(null);
+        $article->save();
         return redirect()
         ->back()
         ->with('message', "The article $article->title was rollbacked successfully");

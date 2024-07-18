@@ -9,16 +9,17 @@
     @if ($article_to_check)
         <div class="row justify-content-center">
             @if ($article_to_check->images->count())
-            @foreach ($article_to_check->images as $key=> $image)
-                <div class="col-6 col-md-4">
-                    {{-- @dd($image->getUrl(300, 300)) --}}
-                    <img src="{{ $image->getUrl(300, 300)}}" class="d-block w-100" alt="img {{ $key+1 }} of {{ $article_to_check->title }}">
-                </div>
-            @endforeach
+                @foreach ($article_to_check->images as $key => $image)
+                    <div class="col-6 col-md-4">
+                        {{-- @dd($image->getUrl(300, 300)) --}}
+                        <img src="{{ $image->getUrl(300, 300) }}" class="d-block w-100"
+                            alt="img {{ $key + 1 }} of {{ $article_to_check->title }}">
+                    </div>
+                @endforeach
             @else
-            <div class="col-12 d-flex justify-content-center">
-                <h3>No images</h3>
-            </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <h3>No images</h3>
+                </div>
             @endif
         </div>
         </div>
@@ -42,13 +43,13 @@
                     <button class=" btn btn-custom-2">Accept</button>
                 </form>
                 @if ($article_to_rollback)
-                <form action="{{ route('goBack', ['article' => $article_to_rollback]) }}" method="POST">
-                    @csrf
-                    @method('PATCH')
-                    <button class=" btn btn-custom-2">Rollback</button>
-                </form>
+                    <form action="{{ route('goBack', ['article' => $article_to_rollback]) }}" method="POST">
+                        @csrf
+                        @method('PATCH')
+                        <button class=" btn btn-custom-2">Rollback</button>
+                    </form>
                 @else
-                <h4>No rollback</h4>
+                    <h4>No rollback</h4>
                 @endif
             </div>
             @if (session()->has('message'))
@@ -60,25 +61,68 @@
         </div>
         </div>
     @else
-
-        <div class="row vh-100 justify-content-center align-items-center text-center">
+        <div class="row justify-content-center align-items-center text-center">
             <div class="col-12">
                 <h1 class="fst-italic display-4">
                     There are no articles to check.
                 </h1>
-                <a href="{{ route('homepage') }}" class="mt-5 btn-2 btn-custom-2">Homepage</a>
                 @if ($article_to_rollback)
-                <form action="{{ route('goBack', ['article' => $article_to_rollback]) }}" method="POST">
-                    @csrf
-                    @method('PATCH')
-                    <button class="mt-5 btn-2 btn-custom-2">Rollback</button>
-                </form>
+                    <form action="{{ route('goBack', ['article' => $article_to_rollback]) }}" method="POST">
+                        @csrf
+                        @method('PATCH')
+                        <button class="mt-5 btn-2 btn-custom-2">Rollback</button>
+                    </form>
                 @else
-                <h4>No rollback</h4>
+                    <h4 class="">No rollback</h4>
                 @endif
             </div>
         </div>
     @endif
+    <div class="container-fluid mt-5">
+        <div class="row justify-content-center">
+            <div class="col-10 col-md-8">
+                <table class="table">
+                    <thead class="table-custom">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">By</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($articles as $article)
+                            <tr>
+                                <th scope="row">{{ $article->id }}</th>
+                                <td>{{ $article->title }}</td>
+                                <td class="">${{ $article->price }}</td>
+                                <td>{{ $article->user->name }}</td>
+                                <td>
+                                    @if (is_null($article->is_accepted))
+                                        <p>Article not yet reviewed</p>
+                                    @else
+                                        <form action="{{ route('revisor.undoArticle', $article) }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-secondary">Redirect for
+                                                review</button>
+                                        </form>
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center text-center">
+            <div class="col-12">
+                <a href="{{ route('homepage') }}" class="mt-3 btn-2 btn-custom-2">Homepage</a>
+            </div>
+        </div>
+    </div>
     </div>
 
 </x-layout>

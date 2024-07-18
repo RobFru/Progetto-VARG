@@ -25,6 +25,11 @@
     color: var(--txt)!important;
     border-color: var(--acc)!important;
 }
+.btn-custom-4 {
+    background-color: var(--acc)!important;
+    color: var(--txt)!important;
+    border-color: var(--btn)!important;
+}
 
 .btn-no-border {
     border: none;

@@ -21,6 +21,8 @@ Route::get('/category/{category}', [ArticleController::class, 'byCategory'])->na
 
 //Revisors
 Route::get('/revisor/index', [RevisorController::class, 'index'])->middleware('isRevisor')->name('revisor.index');
+//Revisor index and single rollback
+Route::post('/revisor/undoArticle/{article}', [RevisorController::class, 'undoArticle'])->middleware('isRevisor')->name('revisor.undoArticle');
 
 //Accept or Reject Article
 Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('accept');

@@ -53,6 +53,7 @@ a {
 
 .icon-custom{
     color: var(--bg);
+    padding-left: 32px;
 }
 /* form */
 .img-preview {
@@ -61,4 +62,9 @@ a {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+/* tabella */
+.table-custom {
+    background-color: var(--btn) !important;
 }

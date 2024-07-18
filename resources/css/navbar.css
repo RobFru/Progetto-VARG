@@ -93,3 +93,11 @@
     padding: 3px 0; /* Riduce il padding per rendere i bottoni più piccoli */
     border: none; /* Rimuove eventuali bordi che causano spazio extra */
 }
+
+#globo {
+    width: 50px;
+}
+#globo_dropdown {
+    background-color: var(--acc);
+    --bs-dropdown-min-width: 75px !important;
+}
