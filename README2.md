@@ -11,3 +11,5 @@ show.blade.php :
 bottoni del carousel non funzionano a riga 9-10
 
 bottone go back più grande in pagina del revisor
+
+bottone rollback in pagina revisor anche quando non ci sono articoli

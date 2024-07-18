@@ -11,7 +11,8 @@
             @if ($article_to_check->images->count())
             @foreach ($article_to_check->images as $key=> $image)
                 <div class="col-6 col-md-4">
-                    <img src="{{ Storage::url($image->path)}}" class="d-block w-100" alt="img {{ $key+1 }} of {{ $article_to_check->title }}">
+                    {{-- @dd($image->getUrl(300, 300)) --}}
+                    <img src="{{ $image->getUrl(300, 300)}}" class="d-block w-100" alt="img {{ $key+1 }} of {{ $article_to_check->title }}">
                 </div>
             @endforeach
             @else
