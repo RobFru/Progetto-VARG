@@ -65,9 +65,9 @@
 
 {{-- OFFCANVAS --}}
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <div class="offcanvas-header offcanvas-custom">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">{{ __('ui.hello') }}, {{ Auth::user()->name }}</h5>
+        <button type="button" class="btn-close mb-2-5 icon-custom offcanvas-icon" data-bs-dismiss="offcanvas" aria-label="Close"><i class="bi bi-x-circle-fill fs-4"></i></button>
     </div>
     <div class="offcanvas-body">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic enim molestias vitae odio facilis a repudiandae

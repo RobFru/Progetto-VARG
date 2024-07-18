@@ -1,11 +1,13 @@
 <?php
 return[
+    //Navbar
     'hello' => 'Ciao',
     'createArticles' => 'Crea articolo',
     'indexArticles' => 'Articoli',
     'login'=>'Accedi',
     'register'=>'Registrati',
     'search'=>'Cerca',
+    'lang' => 'ITA',
 
 //Categories
     'Books'=>'Libri',

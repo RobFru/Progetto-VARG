@@ -51,6 +51,9 @@ a {
     border-radius: 50%;
 }
 
+.icon-custom{
+    color: var(--bg);
+}
 /* form */
 .img-preview {
     width: 150px;

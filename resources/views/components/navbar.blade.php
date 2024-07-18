@@ -84,13 +84,15 @@
                     <button class="btn btn-custom-3" type="submit">{{ __('ui.search') }}</button>
                 </form>
                 <div class="dropdown">
-                        <i class="bi bi-globe2 text-white fs-3 ms-2 me-4" type="button" data-bs-toggle="dropdown"></i>
+                        <i class="bi bi-globe2 icon-custom fs-3 ms-2 me-4" type="button" data-bs-toggle="dropdown"></i>
                         {{-- da risolvere --}}
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li class="mt-1"><x-_locale lang="en" /></li>
-                        <li class="mt-1"><x-_locale lang="it" /></li>
-                        <li class="mt-1"><x-_locale lang="es" /></li>
-                    </ul>
+                    <span class="m-1">
+                        <ul class="dropdown-menu">
+                                <li class="mt-1"><x-_locale lang="en" /></li>
+                                <li class="mt-1"><x-_locale lang="it" /></li>
+                                <li class="mt-1"><x-_locale lang="es" /></li>
+                        </ul>
+                    </span>
                 </div>
             </div>
         </div>

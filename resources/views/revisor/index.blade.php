@@ -60,12 +60,22 @@
         </div>
         </div>
     @else
+
         <div class="row vh-100 justify-content-center align-items-center text-center">
             <div class="col-12">
                 <h1 class="fst-italic display-4">
                     There are no articles to check.
                 </h1>
-                <a href="{{ route('homepage') }}" class="mt-5 btn btn-custom-2">Go back</a>
+                <a href="{{ route('homepage') }}" class="mt-5 btn-2 btn-custom-2">Homepage</a>
+                @if ($article_to_rollback)
+                <form action="{{ route('goBack', ['article' => $article_to_rollback]) }}" method="POST">
+                    @csrf
+                    @method('PATCH')
+                    <button class="mt-5 btn-2 btn-custom-2">Rollback</button>
+                </form>
+                @else
+                <h4>No rollback</h4>
+                @endif
             </div>
         </div>
     @endif

@@ -1,0 +1,24 @@
+.offcanvas-custom{
+    background-color: var(--main) !important;
+    color: var(--txt) !important;
+    border-bottom: 5px solid var(--btn);
+    border-radius: 15px 0px 0px 0px !important;
+
+}
+
+.btn-close{
+    --bs-btn-close-bg: url(../img/close.png) !important;
+    --bs-btn-close-focus-shadow: 0 0 0 0.25rem rgba(13, 109, 253, 0);
+}
+
+.offcanvas{
+    border-radius: 15px 0px 0px 15px !important;
+}
+
+.offcanvas-icon{
+    color: var(--btn) !important;
+}
+
+.mb-2-5 {
+    margin-bottom: 0.75rem !important;
+  }
