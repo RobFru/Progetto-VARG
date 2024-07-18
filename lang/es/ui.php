@@ -1,5 +1,7 @@
 <?php
 return[
+    'hello' => 'Hola',
+    'createArticles' => 'Crea un artìculo',
     'indexArticles' => 'Artìculos',
     'login'=>'Iniciar sesión',
     'register'=>'Registrarse',

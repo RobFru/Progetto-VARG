@@ -1,5 +1,7 @@
 <?php
 return[
+    'hello' => 'Hi',
+    'createArticles' => 'Create Article',
     'indexArticles' => 'Articles',
     'login'=>'Login',
     'register'=>'Register',

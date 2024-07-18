@@ -1,5 +1,7 @@
 <?php
 return[
+    'hello' => 'Ciao',
+    'createArticles' => 'Crea articolo',
     'indexArticles' => 'Articoli',
     'login'=>'Accedi',
     'register'=>'Registrati',
@@ -20,4 +22,5 @@ return[
     //Masthead
     'Do you want to create a new article?'=>'Vuoi creare un nuovo articolo?',
     'Click here'=>'Clicca qui',
+
 ];

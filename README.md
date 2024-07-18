@@ -17,6 +17,8 @@ Per DB:
 -php artisan migrate:rollback
 -php artisan migrate
 -php artisan db:seed (per rilanciare i seed: php artisan migrate:refresh --seed)
+-php artisan storage:link (se img non compaiono perchè storage non è linkato)
+
 Per avvio:
 -php artisan serve
 -npm run dev
