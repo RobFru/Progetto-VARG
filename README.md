@@ -17,7 +17,6 @@ Per DB:
 -php artisan migrate:rollback
 -php artisan migrate
 -php artisan db:seed (per rilanciare i seed: php artisan migrate:refresh --seed)
-
 Per avvio:
 -php artisan serve
 -npm run dev

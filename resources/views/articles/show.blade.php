@@ -7,7 +7,7 @@
                         <div class="carousel-indicators">
                             @foreach ($article->images as $key => $image)
                             {{-- NON FUNZIONA --}}
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="@if ($loop->first) 0 @else {{ $key+1 }} @endif"
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $loop->index }}"
                                     class="@if ($loop->first) active @endif"
                                     @if ($loop->first) aria-current="true" @endif
                                     aria-label="Slide {{ $key + 1 }}"></button>

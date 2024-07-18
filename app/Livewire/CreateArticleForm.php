@@ -29,6 +29,11 @@ class CreateArticleForm extends Component
 
     public $temporary_images;
 
+    public function render()
+    {
+        return view('livewire.create-article-form');
+    }
+
     public function store()
     {
         $this->validate();
@@ -50,12 +55,8 @@ class CreateArticleForm extends Component
             }
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
-        $this->reset();
         session()->flash('message', 'The article was inserted correctly');
-    }
-    public function render()
-    {
-        return view('livewire.create-article-form');
+        $this->reset();
     }
 
     // logica delle immagini
