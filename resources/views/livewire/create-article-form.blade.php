@@ -8,7 +8,7 @@
     {{-- title --}}
     <form wire:submit="store">
         <div class="mb-3">
-            <label for="title" class="form-label">Title:</label>
+            <label for="title" class="form-label">{{__('ui.Title')}}:</label>
             <input type="title" name="title" class="form-control shadow" @error('title') is-invalid @enderror
                 id="title" wire:model.blur="title">
             @error('title')
@@ -17,7 +17,7 @@
         </div>
         {{-- description --}}
         <div class="mb-3">
-            <label for="description" class="form-label">Description:</label>
+            <label for="description" class="form-label">{{__('ui.Description')}}:</label>
             <textarea type="description" name="description" class="form-control shadow" @error('description') is-invalid @enderror
                 rows="5" id="description" wire:model.blur="description"></textarea>
             @error('description')
@@ -26,7 +26,7 @@
         </div>
         {{-- price --}}
         <div class="mb-3">
-            <label for="price" class="form-label">Price:</label>
+            <label for="price" class="form-label">{{__('ui.Price')}}:</label>
             <input type="price" name="price" class="form-control shadow" @error('price') is-invalid @enderror
                 id="price" wire:model.blur="price">
             @error('price')
@@ -35,7 +35,7 @@
         </div>
         {{-- image --}}
         <div class="mb-3">
-            <label for="img" class="form-label">Image:</label>
+            <label for="img" class="form-label">{{__('ui.Image')}}:</label>
             <input type="file" wire:model.live="temporary_images"multiple
                 class="form-control shadow @error('temporary_images.*') is-invalid @enderror" placeholder="Img/">
 
@@ -67,7 +67,7 @@
         @endif
         {{-- select category --}}
         <div class="mb-3">
-            <label for="category" class="form-label">Category:</label>
+            <label for="category" class="form-label">{{__('ui.Category')}}:</label>
             <select id="category" wire:model.blur="category" class="form-control shadow"
                 @error('category') is-invalid @enderror>
                 <option label disabled>Select Category</option>
@@ -80,7 +80,7 @@
             @enderror
         </div>
         <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-custom">Insert Article</button>
+            <button type="submit" class="btn btn-custom">{{__('ui.Insert Article')}}</button>
         </div>
     </form>
 </div>

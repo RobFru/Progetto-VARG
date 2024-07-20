@@ -4,7 +4,8 @@
     <div class="row">
         <div class="col-12">
             <h1 class="d-flex justify-content-center mt-3 mb-3">
-                Articles
+                {{__('ui.Articles')}}
+                
             </h1>
         </div>
     </div>
@@ -16,7 +17,7 @@
             @empty
             <div class="col-12">
                 <h3 class="text-center">
-                    there are no articles yet.
+                    {{__('ui.There are no articles yet.')}}
                 </h3>
             </div>  
             @endforelse

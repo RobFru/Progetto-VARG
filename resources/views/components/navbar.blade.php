@@ -52,7 +52,7 @@
                         <li class="nav-item">
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
-                                <button class="nav-link text-light m-none me-md-3">Logout</button>
+                                <button class="nav-link text-light m-none me-md-3">{{ __('ui.Logout') }}</button>
                             </form>
                         </li>
                     @endauth
@@ -70,7 +70,7 @@
                     @if (Auth::user()->is_revisor)
                         <ul class="navbar-nav mb-2 mb-lg-0">
                             <li class='nav-item '>
-                                <a class="nav-link" href="{{ route('revisor.index') }}">Revisor
+                                <a class="nav-link" href="{{ route('revisor.index') }}">{{ __('ui.Revisor') }}</a>
                                     <span
                                         class="nav-link text-white badge rounded-circle btn-custom">{{ \App\Models\Article::toBeRevisedCount() }}</span>
                                 </a>

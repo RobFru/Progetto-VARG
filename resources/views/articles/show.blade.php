@@ -38,7 +38,7 @@
                         @endif
                     </div>
                 @else
-                    <h3>No images for this article</h3>
+                    <h3>{{'__ui.No images for this article'}}</h3>
                 @endif
             </div>
             <div class="col-12 col-md-5 mt-5 text-start">
@@ -51,7 +51,7 @@
                     </button>
                     <div class="separate"></div>
                 </div>
-                <p class="fs-3 text-start mt-3">Description : Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                <p class="fs-3 text-start mt-3">{{'__ui.Description'}}: Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                     Facere, dicta? Veniam iste magni consectetur, iusto aliquam fugiat alias eaque
                     aperiam?{{ $article->description }}</p>
                 <div class="separate"></div>

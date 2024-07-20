@@ -8,6 +8,8 @@ return[
     'register'=>'Registrati',
     'search'=>'Cerca',
     'lang' => 'ITA',
+    'Revisor' => 'Revisore',
+    'Logout' => 'Esci',
 
 //Categories
     'Books'=>'Libri',
@@ -24,5 +26,51 @@ return[
     //Masthead
     'Do you want to create a new article?'=>'Vuoi creare un nuovo articolo?',
     'Click here'=>'Clicca qui',
+
+    //Articles
+    'Articles'=>'Articoli',
+    'Details'=>'Dettagli',
+    'There are no articles yet.'=>'Non ci sono articoli.',
+
+    //Create
+    'Create Article'=>'Crea Articolo',
+
+    //Bycategory
+    'There are no articles yet for this category.'=>'Non ci sono articoli per questa categoria.',
+    'Articles by category'=>'Articoli per categoria',
+    'Create Article'=>'Crea Articolo',
+
+    //Searched
+    'No articles found.'=>'Nessun articolo trovato.',
+    'Searched articles'=>'Articoli cercati',
+
+    //Show
+    'No images for this article.'=>'Non ci sono immagini per questo articolo.',
+    'Description' => 'Descrizione',
+
+    //Footer
+    'Features' => 'Funzionalità',
+    'Work with us' => 'Lavora con noi',
+    'Pricing' => 'Prezzi',
+    'FAQs' => 'FAQ',
+    'About' => 'Informazioni',
+
+    //Register and login 
+    'Login'=>'Accedi',
+    'Email address:' => 'Indirizzo email:',
+    'Create account' => 'Crea account',
+    'or' => 'o',
+    'Register'=>'Registrati',
+    'Name:' => 'Nome',
+    'Password Confirmation' => 'Conferma Password',
+    'Password' => 'Password',
+
+    //Create article
+    'Title' => 'Titolo',
+    'Description' => 'Descrizione',
+    'Price' => 'Prezzo',
+    'Image' => 'Immagine',
+    'Category' => 'Categoria',
+    'Insert Article' => 'Inserisci Articolo',
 
 ];

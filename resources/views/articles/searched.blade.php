@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 mt-3 mb-3 text-center">
-                <h1>searched articles</h1>
+                <h1>{{__('ui.Searched articles')}}</h1>
             </div>
         </div>
         <div class="row justify-content-around">
@@ -13,7 +13,7 @@
             @empty
             <div class="col-12 d-flex justify-content-center mt-4">
                 <h3>
-                    no articles found.
+                    {{__('ui.No articles found.')}}
                 </h3>
             </div>
             @endforelse
