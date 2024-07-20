@@ -10,7 +10,7 @@
         <div class="row justify-content-center">
             @if ($article_to_check->images->count())
                 @foreach ($article_to_check->images as $key => $image)
-                    <div class="col-6 col-md-4">
+                    <div class="col-6 col-md-4 mb-3">
                         {{-- @dd($image->getUrl(300, 300)) --}}
                         <img src="{{ $image->getUrl(300, 300) }}" class="d-block w-100"
                             alt="img {{ $key + 1 }} of {{ $article_to_check->title }}">
@@ -23,16 +23,22 @@
             @endif
         </div>
         </div>
-        <div class="row justify-content-center mt-5">
-            <div class="col-md-4 ps-4 d-flex flex-column justify-content-between">
-                <div>
-                    <h1>{{ $article_to_check->title }}</h1>
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-3 ps-4 d-flex flex-column align-items-center">
+                <div class="shop-card w-100">
+                    <div class="title">
+                        <h2 class="text-truncate">{{ $article_to_check->title }}</h2>
+                    </div>
                     <h3>Author: {{ $article_to_check->user->name }}</h3>
                     <h4>${{ $article_to_check->price }}</h4>
-                    <h4 class="fst-italic text-muted">#{{ $article_to_check->category->name }}</h4>
-                    <p class="h6">{{ $article_to_check->description }}</p>
+                    <div class="d-flex justify-content-center mb-3">
+                        <a href="{{route('byCategory', ['category' => $article_to_check->category])}}" class="btn-2 btn-custom-2">{{ $article_to_check->category->name }}</a>
+                    </div>
+                    <div class="desc">
+                        <p>{{ $article_to_check->description }}</p>
+                    </div>
                 </div>
-                <div class="d-flex pb-4 justify-content-around">
+                <div class="d-flex pb-4 justify-content-around  w-100 mt-5">
                     <form action="{{ route('reject', ['article' => $article_to_check]) }}" method="POST">
                         @csrf
                         @method('PATCH')

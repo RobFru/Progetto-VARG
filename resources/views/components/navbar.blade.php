@@ -87,7 +87,7 @@
                         <i class="bi bi-globe2 icon-custom fs-3" type="button" data-bs-toggle="dropdown"></i>
                         {{-- da risolvere --}}
                     <span class="">
-                        <ul class="dropdown-menu" id="globo_dropdown">
+                        <ul class="dropdown-menu " id="globo_dropdown">
                                 <li class=""><x-_locale lang="en" /></li>
                                 <li class="mt-1"><x-_locale lang="it" /></li>
                                 <li class="mt-1"><x-_locale lang="es" /></li>
