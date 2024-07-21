@@ -68,11 +68,12 @@
                 {{-- collegamento revisore --}}
                 @auth
                     @if (Auth::user()->is_revisor)
+                    <div class="separate-2"></div>
                         <ul class="navbar-nav mb-2 mb-lg-0">
-                            <li class='nav-item '>
+                            <li class='nav-item'>
                                 <a class="nav-link" href="{{ route('revisor.index') }}">{{ __('ui.Revisor') }}</a>
-                                    <span
-                                        class="nav-link text-white badge rounded-circle btn-custom">{{ \App\Models\Article::toBeRevisedCount() }}</span>
+                                <span
+                                    class="nav-link badge-custom text-white rounded-circle btn-custom me-2 d-none d-md-block">{{ \App\Models\Article::toBeRevisedCount() }}</span>
                                 </a>
                             </li>
                         </ul>
@@ -84,13 +85,13 @@
                     <button class="btn btn-custom-3" type="submit">{{ __('ui.search') }}</button>
                 </form>
                 <div class="dropdown dropdown-center me-5 d-flex justify-content-center" id="globo">
-                        <i class="bi bi-globe2 icon-custom fs-3" type="button" data-bs-toggle="dropdown"></i>
-                        {{-- da risolvere --}}
+                    <i class="bi bi-globe2 icon-custom fs-3" type="button" data-bs-toggle="dropdown"></i>
+                    {{-- da risolvere --}}
                     <span class="">
                         <ul class="dropdown-menu " id="globo_dropdown">
-                                <li class=""><x-_locale lang="en" /></li>
-                                <li class="mt-1"><x-_locale lang="it" /></li>
-                                <li class="mt-1"><x-_locale lang="es" /></li>
+                            <li class=""><x-_locale lang="en" /></li>
+                            <li class="mt-1"><x-_locale lang="it" /></li>
+                            <li class="mt-1"><x-_locale lang="es" /></li>
                         </ul>
                     </span>
                 </div>

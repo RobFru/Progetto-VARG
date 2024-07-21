@@ -101,3 +101,10 @@
     background-color: var(--acc);
     --bs-dropdown-min-width: 75px !important;
 }
+
+.badge-custom {
+    height: 65% !important;
+    width: 100% !important;
+    line-height: 73%;
+    margin-top: 0.40rem !important;
+}
