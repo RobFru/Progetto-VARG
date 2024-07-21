@@ -41,11 +41,11 @@ return[
     'Create Article'=>'Crea Articolo',
 
     //Searched
-    'No articles found.'=>'Nessun articolo trovato.',
+    'No articles found'=>'Nessun articolo trovato.',
     'Searched articles'=>'Articoli cercati',
 
     //Show
-    'No images for this article.'=>'Non ci sono immagini per questo articolo.',
+    'Noimagesforthisarticle'=>'Non ci sono immagini per questo articolo.',
     'Description' => 'Descrizione',
 
     //Footer

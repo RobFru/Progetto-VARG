@@ -5,9 +5,9 @@
                 <h1>{{ __('ui.Articles by category') }}</h1>
             </div>
         </div>
-        <div class="row justify-content-around">
+        <div class="row">
             @forelse ($articles as $article)
-                <div class="col-12 col-md-4 mt-3">
+                <div class="col-12 d-flex justify-content-center col-md-4 mt-3">
                     <x-card :article="$article" />
                 </div>
             @empty

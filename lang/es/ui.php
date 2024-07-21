@@ -43,7 +43,7 @@ return[
     'Searched articles'=>'Artículos buscados',
     
     //Show
-    'No images for this article.'=>'No hay imágenes para este artìculo.',
+    'Noimagesforthisarticle'=>'No hay imágenes para este artìculo.',
     'Description' => 'Descripción',
 
     //Footer

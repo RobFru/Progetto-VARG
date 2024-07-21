@@ -87,7 +87,7 @@
         </div>
     @endif
     <div class="container-fluid mt-5">
-        <div class="row justify-content-center">
+        <div class="row justify-content-start justify-content-md-around">
             <div class="col-10 col-md-8">
                 <table class="table">
                     <thead class="table-custom">
@@ -97,6 +97,7 @@
                             <th scope="col">Price</th>
                             <th scope="col">By</th>
                             <th scope="col">Action</th>
+                            <th scope="col">Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -115,6 +116,15 @@
                                             <button type="submit" class="btn btn-custom-2">Redirect for
                                                 review</button>
                                         </form>
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($article->is_accepted===null)
+                                        <p class="text-warning">To be revised</p>
+                                    @elseif ($article->is_accepted)
+                                        <p class="text-success">Accepted</p>
+                                    @else
+                                        <p class="text-danger">Rejected</p>
                                     @endif
                                 </td>
                             </tr>

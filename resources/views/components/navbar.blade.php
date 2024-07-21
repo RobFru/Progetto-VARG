@@ -1,8 +1,21 @@
 <span class="fixed-top">
     <nav class="navbar navbar-expand-lg navbar-expand-xl bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand logo display-font" href="#"> <img src="/media/logolupo.png" alt="Logo"
+            <a class="navbar-brand logo display-font me-5" href="#"> <img src="/media/logolupo.png" alt="Logo"
                     style="height: 30px; margin-right: 10px;">VARG</a>
+                    {{-- Icone lingua da mobile --}}
+                    <div class="dropdown dropdown-center d-block d-md-none me-globo d-flex justify-content-center" id="globo">
+                        <i class="bi bi-globe2 icon-custom fs-3 me-2" type="button" data-bs-toggle="dropdown"></i> 
+                        <span class="">
+                            <ul class="dropdown-menu " id="globo_dropdown">
+                                <li class=""><x-_locale lang="en" /></li>
+                                <li class="mt-1"><x-_locale lang="it" /></li>
+                                <li class="mt-1"><x-_locale lang="es" /></li>
+                            </ul>
+                        </span>
+                    </div>
+                    {{--Fine icone lingua da mobile --}}
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -39,8 +52,8 @@
                         </a>
                         <ul class="dropdown-menu text-center">
                             @foreach ($categories as $category)
-                                <li><a class="dropdown-item"
-                                        href="{{ route('byCategory', ['category' => $category]) }}">{{ $category->name }}</a>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('byCategory', ['category' => $category]) }}">{{ $category->name }}</a>
                                 </li>
                                 @if (!$loop->last)
                                     <hr class="dropdown-divider">
@@ -69,26 +82,25 @@
                 @auth
                     @if (Auth::user()->is_revisor)
                     <div class="separate-2"></div>
-                        <ul class="navbar-nav mb-2 mb-lg-0">
+                        <ul class="navbar-nav mb-2 ms-2 mb-lg-0">
                             <li class='nav-item'>
                                 <a class="nav-link" href="{{ route('revisor.index') }}">{{ __('ui.Revisor') }}</a>
                                 <span
-                                    class="nav-link badge-custom text-white rounded-circle btn-custom me-2 d-none d-md-block">{{ \App\Models\Article::toBeRevisedCount() }}</span>
+                                    class="nav-link badge-custom rounded-circle text-white btn-custom me-2 d-none d-md-block">{{ \App\Models\Article::toBeRevisedCount() }}</span>
                                 </a>
                             </li>
                         </ul>
                     @endif
                 @endauth
-                <form class="d-flex me-5" role="search" method="GET" action="{{ route('article.search') }}">
+                <form class="d-flex justify-content-center" role="search" method="GET" action="{{ route('article.search') }}">
                     <input class="form-control shadow me-3" type="search" name="query" placeholder="Search"
                         aria-label="Search">
                     <button class="btn btn-custom-3" type="submit">{{ __('ui.search') }}</button>
                 </form>
-                <div class="dropdown dropdown-center me-5 d-flex justify-content-center" id="globo">
+                <div class="dropdown dropdown-center d-none d-md-block me-5 d-flex justify-content-center" id="globo">
                     <i class="bi bi-globe2 icon-custom fs-3" type="button" data-bs-toggle="dropdown"></i>
-                    {{-- da risolvere --}}
-                    <span class="">
-                        <ul class="dropdown-menu " id="globo_dropdown">
+                    <span>
+                        <ul class="dropdown-menu ms-none ms-md-2" id="globo_dropdown">
                             <li class=""><x-_locale lang="en" /></li>
                             <li class="mt-1"><x-_locale lang="it" /></li>
                             <li class="mt-1"><x-_locale lang="es" /></li>
@@ -105,7 +117,7 @@
                 @foreach ($categories as $category)
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('byCategory', ['category' => $category]) }}">
-                            {{ __("ui.$category->name") }}
+                            {{("$category->name") }}
                         </a>
                     </li>
                 @endforeach

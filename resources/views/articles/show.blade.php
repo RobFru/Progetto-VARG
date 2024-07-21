@@ -11,10 +11,6 @@
                                     @if ($loop->first) aria-current="true" @endif
                                     aria-label="Slide {{ $key + 1 }}"></button>
                             @endforeach
-                            {{-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button> --}}
                         </div>
                         <div class="carousel-inner">
                             @foreach ($article->images as $key => $image)
@@ -38,7 +34,7 @@
                         @endif
                     </div>
                 @else
-                    <h3>{{'__ui.No images for this article'}}</h3>
+                    <h3>{{__('ui.Noimagesforthisarticle')}}</h3>
                 @endif
             </div>
             <div class="col-12 col-md-5 mt-5 text-start">
@@ -51,7 +47,7 @@
                     </button>
                     <div class="separate"></div>
                 </div>
-                <p class="fs-3 text-start mt-3">{{'__ui.Description'}}: Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                <p class="fs-3 text-start mt-3">{{__('ui.Description')}}: Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                     Facere, dicta? Veniam iste magni consectetur, iusto aliquam fugiat alias eaque
                     aperiam?{{ $article->description }}</p>
                 <div class="separate"></div>

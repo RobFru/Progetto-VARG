@@ -85,7 +85,6 @@ Shop Card
 .shop-card .btn {
     position: relative;
     z-index: 1;
-    float: right;
     display: inline-block;
     font-size: 13px;
     font-weight: 900;

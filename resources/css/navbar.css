@@ -42,7 +42,6 @@
     border: var(--acc) solid var(--acc);
 }
 
-
 /* NAVBAR SECONDARIA */
 
 .navbar-secondaria {
@@ -50,7 +49,6 @@
     margin: 0;
     width: 100%;
     box-sizing: border-box;
-    /* background-color: var(--acc) !important; */
 }
 
 .navbar-secondaria ul {
@@ -61,7 +59,6 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    /* width:80% */
     box-sizing: border-box;
 }
 
@@ -87,15 +84,18 @@
     background-color: var(--main);
 }
 
-/* Aggiungi questo stile per rimuovere lo spazio tra bottoni e navbar */
 .navbar-secondaria li a {
     margin: 0;
-    padding: 3px 0; /* Riduce il padding per rendere i bottoni più piccoli */
-    border: none; /* Rimuove eventuali bordi che causano spazio extra */
+    padding: 3px 0; 
+    border: none;
+}
+
+.me-globo{
+    margin-right: 5.5rem;
 }
 
 #globo {
-    width: 50px;
+    width: 30px;
 }
 #globo_dropdown {
     background-color: var(--acc);

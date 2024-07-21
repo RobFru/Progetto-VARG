@@ -23,6 +23,18 @@ class DatabaseSeeder extends Seeder
         'Music',
 
     ];
+    // $categories = [
+    //     __('ui.Furniture'),
+    //     __('ui.Watches'),
+    //     __('ui.Shoes'),
+    //     __('ui.Clothing'),
+    //     __('ui.Paintings'),
+    //     __('ui.Books'),
+    //     __('ui.Jewelry'),
+    //     __('ui.Electronics'),
+    //     __('ui.Vehicles'),
+    //     __('ui.Music'),
+    // ];
     public function run(): void
     {
        
