@@ -11,3 +11,7 @@ carrello offcanvas che puoi visualizzare su qualsiasi pagina con dentro custom c
 errore quando non si inseriscono immagini nel form di create article
 
 spostare bottone nella card più a destra
+
+categorie navbar mobile
+
+cambiare foto censura volto
