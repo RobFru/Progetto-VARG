@@ -1,4 +1,4 @@
-<span class="fixed-top">
+<span class="fixed-top" id="navbar">
     <nav class="navbar navbar-expand-lg navbar-expand-xl bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand logo display-font me-5" href="#"> <img src="/media/logolupo.png" alt="Logo"
