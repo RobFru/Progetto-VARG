@@ -12,6 +12,7 @@ return[
     'Logout' => 'Esci',
 
 //Categories
+    'Categories'=>'Categorie',
     'Books'=>'Libri',
     'Clothing'=>'Abbigliamento',
     'Electronics'=>'Elettronica',

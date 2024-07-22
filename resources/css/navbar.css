@@ -100,6 +100,7 @@
 #globo_dropdown {
     background-color: var(--acc);
     --bs-dropdown-min-width: 75px !important;
+    
 }
 
 .badge-custom {

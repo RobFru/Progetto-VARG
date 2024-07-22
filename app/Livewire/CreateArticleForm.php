@@ -27,7 +27,7 @@ class CreateArticleForm extends Component
     #[Validate('required')]
     public $category;
     public $article;
-
+    #[Validate('required')]
     public $images;
 
     public $temporary_images;

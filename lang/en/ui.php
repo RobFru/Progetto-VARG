@@ -10,6 +10,7 @@ return[
     'Logout' => 'Logout',
 
     //Categories
+    'Categories'=>'Categories',
     'Books'=>'Books',
     'Clothing'=>'Clothing',
     'Electronics'=>'Electronics',

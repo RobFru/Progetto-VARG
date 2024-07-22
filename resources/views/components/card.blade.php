@@ -14,9 +14,9 @@
         </figure>
     </div>
 
-    <div class="cta">
-        <div class="price"><span>$</span>{{ $article->price }}</div>
-        <a class="" href="{{ route('show.article', compact('article')) }}"><button class="btn btn-custom mx-2">Details</button></a>
+    <div class="cta p-0 pt-4">
+        <div class="price mx-2"><span>$</span>{{ $article->price }}</div>
+        <a class="" href="{{ route('show.article', compact('article')) }}"><button class="btn btn-custom mx-custom">Details</button></a>
     </div>
 </div>
 <div class="bg"></div>

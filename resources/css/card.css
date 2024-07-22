@@ -16,7 +16,9 @@ html {
     font-family: "Open Sans Condensed", sans-serif;
 }
 
-
+.mx-custom {
+    margin-left: 55.1%;
+}
 /*--------------------
 Shop Card
 ---------------------*/

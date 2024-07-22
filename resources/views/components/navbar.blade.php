@@ -48,12 +48,12 @@
                     <li class="nav-item dropdown d-md-none d-flex flex-column text-center">
                         <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Categories
+                            {{__('ui.Categories')}}
                         </a>
                         <ul class="dropdown-menu text-center">
                             @foreach ($categories as $category)
                                 <li>
-                                    <a class="dropdown-item" href="{{ route('byCategory', ['category' => $category]) }}">{{ $category->name }}</a>
+                                    <a class="dropdown-item" href="{{ route('byCategory', ['category' => $category]) }}">{{__("ui.$category->name") }}</a>
                                 </li>
                                 @if (!$loop->last)
                                     <hr class="dropdown-divider">

@@ -10,6 +10,7 @@ return[
     'Logout' => 'Cierre de sesión',
 
     //Categories
+    'Categories'=>'Categorías',
     'Books'=>'Libros',
     'Clothing'=>'Ropa',
     'Electronics'=>'Electronica',
