@@ -117,7 +117,7 @@
                 @foreach ($categories as $category)
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('byCategory', ['category' => $category]) }}">
-                            {{("$category->name") }}
+                            {{__("ui.$category->name") }}
                         </a>
                     </li>
                 @endforeach
