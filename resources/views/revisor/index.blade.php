@@ -15,6 +15,42 @@
                         <img src="{{ $image->getUrl(300, 300) }}" class="d-block w-100"
                             alt="img {{ $key + 1 }} of {{ $article_to_check->title }}">
                     </div>
+                    <div class="col-10">
+                        <h5>Labels</h5>
+                        @if ($image->labels)
+                            @foreach ($image->labels as $label)
+                            #{{ $label}},
+                            @endforeach
+                        @else
+                        <p class="fst-italic">No labels</p>
+                        @endif
+                    </div>
+                    <div class="col-10">
+                        <div class="card-body">
+                            <div class="row justify-content-center">
+                                <div class="col-2">
+                                    <div>Adult</div>
+                                    <div class="text-center mx-auto {{ $image->adult}}"></div>
+                                </div>
+                                <div class="col-2">
+                                    <div>Medical</div>
+                                    <div class="text-center mx-auto {{ $image->medical}}"></div>
+                                </div>
+                                <div class="col-2">
+                                    <div>Spoof</div>
+                                    <div class="text-center mx-auto {{ $image->spoof}}"></div>
+                                </div>
+                                <div class="col-2">
+                                    <div>Violence</div>
+                                    <div class="text-center mx-auto {{ $image->violence}}"></div>
+                                </div>
+                                <div class="col-2">
+                                    <div>Racy</div>
+                                    <div class="text-center mx-auto {{ $image->racy}}"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 @endforeach
             @else
                 <div class="col-12 d-flex justify-content-center">

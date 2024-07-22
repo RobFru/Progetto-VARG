@@ -2,11 +2,13 @@
 
 namespace App\Jobs;
 
+use App\Models\Image;
 use Illuminate\Bus\Queueable;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
+use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 
 class GoogleVisionSafeSearch implements ShouldQueue
 {
@@ -16,7 +18,7 @@ class GoogleVisionSafeSearch implements ShouldQueue
     /**
      * Create a new job instance.
      */
-    public function __construct()
+    public function __construct($article_image_id)
     {
         //
         $this->article_image_id = $article_image_id;
@@ -28,12 +30,12 @@ class GoogleVisionSafeSearch implements ShouldQueue
     public function handle(): void
     {
         //
-        $i Image::find($this->article_image_id);
+        $i = Image::find($this->article_image_id);
         if (!$i) {
             return;
         }
         $image = file_get_contents(storage_path('app/public/' . $i->path));
-        putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('google-credentials.json'));
+        putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('google_credentials.json'));
 
         $imageAnnotator = new ImageAnnotatorClient();
         $response = $imageAnnotator->safeSearchDetection($image);
@@ -48,7 +50,20 @@ class GoogleVisionSafeSearch implements ShouldQueue
         $racy = $safe->getRacy();
 
         $likelyhoodName = [
-            'text-secondary bi bi-circle-fill'
-        ]
+            'text-secondary bi bi-circle-fill',
+            'text-success bi bi-check-circle-fill',
+            'text-success bi bi-check-circle-fill',
+            'text-warning bi bi-exclamation-circle-fill',
+            'text-warning bi bi-exclamation-circle-fill',
+            'text-danger bi bi-dash-circle-fill'
+        ];
+
+        $i->adult = $likelyhoodName[$adult];
+        $i->medical = $likelyhoodName[$medical];
+        $i->spoof = $likelyhoodName[$spoof];
+        $i->violence = $likelyhoodName[$violence];
+        $i->racy = $likelyhoodName[$racy];
+        
+        $i->save();
     }
 }
