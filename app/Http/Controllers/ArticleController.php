@@ -43,7 +43,7 @@ class ArticleController extends Controller
     }
     public function byCategory(Category $category)
     {
-        $articles = $category->articles->where('is_accepted', true);
-        return view('articles.byCategory', ['articles' => $category->articles, 'category' => $category]);
+        $articles = $category->articles()->where('is_accepted', true)->get();
+        return view('articles.byCategory', ['articles' => $articles, 'category' => $category]);
     }
 }
