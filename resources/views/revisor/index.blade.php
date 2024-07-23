@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 mt-3 mb-3 text-center">
-                <h1 class="display-5 text center pb-2 mt-4">Revisor Dashboard</h1>
+                <h1 class="display-5 text center pb-2 mt-4">{{__('ui.Dashboard')}}</h1>
             </div>
         </div>
     </div>
@@ -14,11 +14,11 @@
                         <div class="title">
                             <h2 class="text-truncate">{{ $article_to_check->title }}</h2>
                         </div>
-                        <h3>Author: {{ $article_to_check->user->name }}</h3>
+                        <h3>{{__('ui.Author')}}: {{ $article_to_check->user->name }}</h3>
                         <h4>${{ $article_to_check->price }}</h4>
                         <div class="d-flex justify-content-center mb-3">
                             <a href="{{ route('byCategory', ['category' => $article_to_check->category]) }}"
-                                class="btn-2 btn-custom-2">{{ $article_to_check->category->name }}</a>
+                                class="btn-2 btn-custom-2">{{ __("ui.{$article_to_check->category->name}") }}</a>
                         </div>
                         <div class="desc">
                             <p>{{ $article_to_check->description }}</p>
@@ -27,22 +27,22 @@
                             <form action="{{ route('accept', ['article' => $article_to_check]) }}" method="POST">
                                 @csrf
                                 @method('PATCH')
-                                <button class=" btn btn-custom-accept">Accept</button>
+                                <button class=" btn btn-custom-accept">{{__('ui.Approve')}}</button>
                             </form>
                             <form action="{{ route('reject', ['article' => $article_to_check]) }}" method="POST">
                                 @csrf
                                 @method('PATCH')
-                                <button class="btn btn-custom-reject">Reject</button>
+                                <button class="btn btn-custom-reject">{{__('ui.Reject')}}</button>
                             </form>
                             @if ($article_to_rollback)
                                 <form action="{{ route('goBack', ['article' => $article_to_rollback]) }}"
                                     method="POST">
                                     @csrf
                                     @method('PATCH')
-                                    <button class=" btn btn-custom-2">Rollback</button>
+                                    <button class=" btn btn-custom-2">{{__('ui.Cancel')}}</button>
                                 </form>
                             @else
-                                <h4>No rollback</h4>
+                                <h4>{{__('ui.No cancellable articles')}}</h4>
                             @endif
                         </div>
                     </div>
@@ -164,18 +164,17 @@
                                     @else
                                         <form action="{{ route('revisor.undoArticle', $article) }}" method="POST">
                                             @csrf
-                                            <button type="submit" class="btn btn-custom-2">Redirect for
-                                                review</button>
+                                            <button type="submit" class="btn btn-custom-2">{{__('ui.Redirect for review')}}</button>
                                         </form>
                                     @endif
                                 </td>
                                 <td>
                                     @if ($article->is_accepted === null)
-                                        <p class="text-warning">To be revised</p>
+                                        <p class="text-warning">{{__('ui.To be revised')}}</p>
                                     @elseif ($article->is_accepted)
-                                        <p class="text-success">Accepted</p>
+                                        <p class="text-success">{{__('ui.Accepted')}}</p>
                                     @else
-                                        <p class="text-danger">Rejected</p>
+                                        <p class="text-danger">{{__('ui.Rejected')}}</p>
                                     @endif
                                 </td>
                             </tr>

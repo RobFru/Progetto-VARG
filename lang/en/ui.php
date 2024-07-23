@@ -75,4 +75,17 @@ return[
     // Cards
     'details' => 'Details',
 
+    //Revisor
+    'Approve' => 'Approve',
+    'Reject' => 'Reject',
+    'Cancel' => 'Cancel',
+    'Author' => 'Author',
+    'Dashboard' => 'Dashboard',
+    'No cancellable articles' => 'No cancellable articles',
+    'To be revised' => 'To be revised',
+    'Accepted' => 'Accepted',
+    'Rejected' => 'Rejected',
+    'Redirect for review' => 'Redirect for review'
+
+
 ];

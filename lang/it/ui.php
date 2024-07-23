@@ -77,4 +77,16 @@ return[
      //Cards
      'details' => 'Dettagli', 
 
+     //Revisor
+     'Approve' => 'Approva',
+     'Reject' => 'Rifiuta',
+     'Cancel' => 'Annulla',
+     'Author' => 'Autore',
+     'Dashboard' => 'Dashboard',
+     'No cancellable articles' => 'Non ci sono articoli annullabili',
+     'To be revised' => 'Da revisionare',
+     'Accepted' => 'Accettato',
+     'Rejected' => 'Rifiutato',
+     'Redirect for review' => 'Reindirizza per revisione',
+
 ];

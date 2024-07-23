@@ -10,4 +10,6 @@ migliorare offcanvas show
 
 ricerca foto
 
+sort by status
+
 organizzazione presentazione
