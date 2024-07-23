@@ -144,11 +144,11 @@
                     <thead class="table-custom">
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Title</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">By</th>
-                            <th scope="col">Action</th>
-                            <th scope="col">Status</th>
+                            <th scope="col">{{__('ui.Title')}}</th>
+                            <th scope="col">{{__('ui.Price')}}</th>
+                            <th scope="col">{{__('ui.By')}}</th>
+                            <th scope="col">{{__('ui.Actions')}}</th>
+                            <th scope="col">{{__('ui.Status')}}</th>
                         </tr>
                     </thead>
                     <tbody>

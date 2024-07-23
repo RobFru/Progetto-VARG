@@ -88,5 +88,10 @@ return[
      'Accepted' => 'Accettato',
      'Rejected' => 'Rifiutato',
      'Redirect for review' => 'Reindirizza per revisione',
+     'Title' => 'Titolo',
+     'Price' => 'Prezzo',
+     'By' => 'Di',
+     'Actions' => 'Azioni',
+     'Status' => 'Stato',
 
 ];

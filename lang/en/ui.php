@@ -85,7 +85,13 @@ return[
     'To be revised' => 'To be revised',
     'Accepted' => 'Accepted',
     'Rejected' => 'Rejected',
-    'Redirect for review' => 'Redirect for review'
+    'Redirect for review' => 'Redirect for review',
+    'Title' => 'Title',
+    'Price' => 'Price',
+    'By' => 'By',
+    'Actions' => 'Actions',
+    'Status' => 'Status',
+    'Homepage' => 'Homepage',
 
 
 ];
