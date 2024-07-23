@@ -54,20 +54,18 @@
                         </div>
                     @endif
                 </div>
-
+                {{-- Inizio carosello --}}
                 {{-- carosello immagini --}}
                 @if ($article_to_check->images->count())
-                    <div id="carousel2" class="carousel slide col-2 col-md-4 mb-0 mb-md-3">
+                    <div id="carouselExample" class="carousel slide col-2 col-md-8 mb-0 mb-md-3">
                         <div class="carousel-inner">
                             @foreach ($article_to_check->images as $key => $image)
                                 <div class="carousel-item @if ($loop->first) active @endif">
-                                    <div class="d-flex flex-column">
-
-                                    
+                                    <div class="d-flex">
                                     <img src="{{ $image->getUrl(300, 300) }}" class="d-block w-100"
                                         alt="img {{ $key + 1 }} of {{ $article_to_check->title }}">
                                 
-                                            <div class="shop-card">
+                                            <div class="shop-card bg-dark">
                                                 <div class="col-12">
                                                     <h3 class="">Labels</h3>
                                                 </div>
@@ -107,34 +105,15 @@
                             @endforeach
                         </div>
                         @if ($article_to_check->images->count() > 1)
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel2"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carousel2"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                          </button>
+                          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                          </button>
                         @endif
-                    </div>
-
-                    {{-- carosello labels --}}
-                    <div id="carousel1" class="carousel slide">
-                        <div class="carousel-inner">
-                            @foreach ($article_to_check->images as $key => $image)
-                                
-                            @endforeach
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
-                        </button>
                     </div>
                 @endif
             </div>

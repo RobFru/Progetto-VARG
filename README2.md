@@ -6,8 +6,6 @@ cambiare lingua dove manca
 
 carrello offcanvas che puoi visualizzare su qualsiasi pagina con dentro custom cards dei prodotti che ci hai inserito
 
-button carrello da modificare
-
 migliorare offcanvas show
 
 ricerca foto

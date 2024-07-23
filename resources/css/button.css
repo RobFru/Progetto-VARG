@@ -90,3 +90,7 @@
     --bs-btn-disabled-bg: #198754!important;
     --bs-btn-disabled-border-color: #198754!important;
 }
+
+button{
+    background: transparent;
+}
