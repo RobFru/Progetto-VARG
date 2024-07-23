@@ -38,6 +38,12 @@ Shop Card
     /* z-index: 2; */
 }
 
+@media screen and (max-width: 700px) {
+    .shop-card {
+        width: 100%;
+    }
+}
+
 .shop-card figure {
     margin: 0;
     padding: 0;

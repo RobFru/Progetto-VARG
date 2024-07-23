@@ -5,14 +5,14 @@
     </div>
     
     <div class="desc">
-        <p>{{ $article->description }}</p>
+        <p class="text-truncate">{{ $article->description }}</p>
     </div>
     <div class="d-flex justify-content-center mb-3">
         <a href="{{ route('byCategory', ['category' => $article->category]) }}" class="btn-2 btn-custom-2">{{ __("ui.{$article->category->name}") }}</a>
     </div>
     <div class="slider">
         <figure data-color="#E24938, #A30F22">
-            <img src="{{ $article->images->isNotEmpty() ? $article->images->first()->getUrl(300, 300) : 'http://www.supah.it/dribbble/012/1.jpg' }}" alt="img of {{ $article->title }}" />
+            <img src="{{ $article->images->isNotEmpty() ? $article->images->first()->getUrl(500, 600) : 'http://www.supah.it/dribbble/012/1.jpg' }}" alt="img of {{ $article->title }}" />
         </figure>
     </div>
 

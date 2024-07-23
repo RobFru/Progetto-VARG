@@ -90,3 +90,17 @@ a:hover {
     position: absolute;
     right: 30%;
 }
+
+@media screen and (max-width: 700px) {
+    .next-custom {
+        right: 10px;
+    bottom: 45vh;
+    }
+    .next-custom-2 {
+        left: 10px;
+    bottom: 45vh;
+    }
+    .shop-card {
+        width: 100%;
+    }
+}

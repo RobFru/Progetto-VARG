@@ -10,6 +10,7 @@ return[
     'lang' => 'ITA',
     'Revisor' => 'Revisore',
     'Logout' => 'Esci',
+    'latest' => 'Ultimi Articoli',
 
 //Categories
     'Categories'=>'Categorie',

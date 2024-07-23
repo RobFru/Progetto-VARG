@@ -12,3 +12,5 @@ ricerca foto
 sort by status
 
 organizzazione presentazione
+
+aggiungere masthead a mobile

@@ -125,5 +125,5 @@
         </nav>
     </div>
 </span>
-<div class="mt-6">
+<div class="mt-6 d-none d-md-block">
 </div>

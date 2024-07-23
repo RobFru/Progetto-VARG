@@ -6,10 +6,17 @@
             </div>
         </div>
     </div>
+    @if (session()->has('message'))
+    <div class="alert alert-custom alert-dismissible fade show" role="alert">
+        <strong>{{ session('message') }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"
+            aria-label="Close"></button>
+    </div>
+@endif
     @if ($article_to_check)
         <div class="container-fluid">
             <div class="row align-items-center">
-                <div class="col-8 col-md-3 mb-5 me-5 ms-5 d-flex">
+                <div class="col-12 col-md-3 mb-5 me-5 ms-0 ms-md-5 d-flex">
                     <div class="shop-card w-100">
                         <div class="title">
                             <h2 class="text-truncate">{{ $article_to_check->title }}</h2>
@@ -46,13 +53,6 @@
                             @endif
                         </div>
                     </div>
-                    @if (session()->has('message'))
-                        <div class="alert alert-custom alert-dismissible fade show" role="alert">
-                            <strong>{{ session('message') }}</strong>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                aria-label="Close"></button>
-                        </div>
-                    @endif
                 </div>
                 {{-- Inizio carosello --}}
                 {{-- carosello immagini --}}
@@ -62,7 +62,7 @@
                             @foreach ($article_to_check->images as $key => $image)
                                 <div class="carousel-item @if ($loop->first) active @endif">
                                     <div class="d-md-flex">
-                                        <img src="{{ $image->getUrl(300, 300) }}" class="d-block w-100"
+                                        <img src="{{ $image->getUrl(500, 600) }}" class="d-block w-100"
                                             alt="img {{ $key + 1 }} of {{ $article_to_check->title }}">
                                         {{-- DESKTOP --}}
                                         <div class="shop-card d-none d-md-block">
@@ -122,23 +122,23 @@
                                                 <h3 class="">Tags</h3>
                                             </div>
                                             <div class="row mt-2 ms-2">
-                                                <div class="col-12 d-flex my-1">
+                                                <div class="col-12 d-flex my-1 justify-content-center">
                                                     <div class="badge btn-custom-2">Adult</div>
                                                     <div class=" {{ $image->adult }} ms-1"></div>
                                                 </div>
-                                                <div class="col-12 d-flex my-1">
+                                                <div class="col-12 d-flex my-1 justify-content-center">
                                                     <div class="badge btn-custom-2">Medical</div>
                                                     <div class=" {{ $image->medical }} ms-1"></div>
                                                 </div>
-                                                <div class="col-12 d-flex my-1">
+                                                <div class="col-12 d-flex my-1 justify-content-center">
                                                     <div class="badge btn-custom-2">Spoof</div>
                                                     <div class=" {{ $image->spoof }} ms-1"></div>
                                                 </div>
-                                                <div class="col-12 d-flex my-1">
+                                                <div class="col-12 d-flex my-1 justify-content-center">
                                                     <div class="badge btn-custom-2">Violence</div>
                                                     <div class=" {{ $image->violence }} ms-1"></div>
                                                 </div>
-                                                <div class="col-12 d-flex my-1">
+                                                <div class="col-12 d-flex my-1 justify-content-center">
                                                     <div class="badge btn-custom-2">Racy</div>
                                                     <div class=" {{ $image->racy }} ms-1"></div>
                                                 </div>
@@ -149,7 +149,7 @@
                             @endforeach
                         </div>
                         @if ($article_to_check->images->count() > 1)
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                            <button class="carousel-control-prev next-custom-2" type="button" data-bs-target="#carouselExample"
                                 data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon btn-custom rounded-pill"
                                     aria-hidden="true"></span>

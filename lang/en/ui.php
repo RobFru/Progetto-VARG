@@ -8,6 +8,7 @@ return[
     'search'=>'Search',
     'Revisor' => 'Revisor',
     'Logout' => 'Logout',
+    'latest' => 'Latest Articles',
 
     //Categories
     'Categories'=>'Categories',

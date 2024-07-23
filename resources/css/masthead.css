@@ -55,3 +55,11 @@
 .fs-custom {
     font-size: 85px !important;
 }
+
+.masthead-mobile {
+    background-image: url(../../public/media/masthead-mobile.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30vh;
+}

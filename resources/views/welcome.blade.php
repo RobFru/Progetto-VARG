@@ -6,6 +6,14 @@
             {{ session('errorMessage') }}
         </div>
     @endif
+    <x-masthead_mobile></x-masthead_mobile> 
+    <div class="container-fluid mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12 d-flex justify-content-center">
+                <span class="fs-1 text-center">{{__('ui.latest')}}</span>
+            </div>
+        </div>
+    </div> 
 
     @if (session()->has('message'))
         <div class="alert alert-custom" role="alert">
@@ -23,7 +31,7 @@
             @empty
                 <div class="col-12">
                     <h3 class="text-center">
-                        There are no articles yet.
+                        {{__('ui.There are no articles yet.')}}
                     </h3>
                 </div>
             @endforelse
