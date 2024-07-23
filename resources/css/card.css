@@ -19,6 +19,12 @@ html {
 .mx-custom {
     margin-left: 55.1%;
 }
+@media screen and (max-width: 700px) {
+    .mx-custom {
+        margin-left: 45.1%;
+    }
+}
+
 /*--------------------
 Shop Card
 ---------------------*/

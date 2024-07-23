@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ $title ?? 'Da inserire' }}</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     {{-- fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,12 +16,16 @@
     {{-- fine fonts --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-
 <body >
+
     <x-navbar />
     <div class="min-vh-100">
     {{ $slot }}
     <x-footer />
-</body>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 
+</body>
 </html>
