@@ -73,6 +73,7 @@ return[
     'Image' => 'Immagine',
     'Category' => 'Categoria',
     'Insert Article' => 'Inserisci Articolo',
+    'Select Category' => 'Seleziona Categoria',
 
      //Cards
      'details' => 'Dettagli', 
@@ -93,5 +94,7 @@ return[
      'By' => 'Di',
      'Actions' => 'Azioni',
      'Status' => 'Stato',
+     'Article not yet reviewed' => 'Articolo non ancora revisionato',
+     'Creators' => 'Creatori'
 
 ];

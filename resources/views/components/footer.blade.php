@@ -20,7 +20,7 @@
     </ul>
     <!-- Creatori del Sito -->
     <div class="text-center text-body-secondary pb-3 mb-3">
-        <p>Creators:</p>
+        <p>{{__('ui.Creators')}}:</p>
         <ul class="list-inline text-center">
             <li class="list-inline-item"><strong>V</strong>ittorio</li>
             <li class="list-inline-item"><strong>A</strong>ndrea</li>

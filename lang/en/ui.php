@@ -71,6 +71,7 @@ return[
     'Image' => 'Image',
     'Category' => 'Category',
     'Insert Article' => 'Insert Article',
+    'Select Category' => 'Select Category',
 
     // Cards
     'details' => 'Details',
@@ -92,6 +93,10 @@ return[
     'Actions' => 'Actions',
     'Status' => 'Status',
     'Homepage' => 'Homepage',
+    'Article not yet reviewed' => 'Article not yet reviewed',
+    'Creators' => 'Creators',
+
+
 
 
 ];

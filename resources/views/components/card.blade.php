@@ -8,7 +8,7 @@
         <p>{{ $article->description }}</p>
     </div>
     <div class="d-flex justify-content-center mb-3">
-        <a href="{{ route('byCategory', ['category' => $article->category]) }}" class="btn-2 btn-custom-2">{{ $article->category->name }}</a>
+        <a href="{{ route('byCategory', ['category' => $article->category]) }}" class="btn-2 btn-custom-2">{{ __("ui.{$article->category->name}") }}</a>
     </div>
     <div class="slider">
         <figure data-color="#E24938, #A30F22">

@@ -72,9 +72,9 @@
             <label for="category" class="form-label">{{__('ui.Category')}}:</label>
             <select id="category" wire:model.blur="category" class="form-control shadow"
                 @error('category') is-invalid @enderror>
-                <option label disabled>Select Category</option>
+                <option label disabled>{{__('ui.Select Category')}}</option>
                 @foreach ($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    <option value="{{ $category->id }}">{{ __("ui.{$category->name}") }}</option>
                 @endforeach
             </select>
             @error('category')

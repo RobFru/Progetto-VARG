@@ -160,7 +160,7 @@
                                 <td>{{ $article->user->name }}</td>
                                 <td>
                                     @if (is_null($article->is_accepted))
-                                        <p>Article not yet reviewed</p>
+                                        <p>{{__('ui.Article not yet reviewed')}}</p>
                                     @else
                                         <form action="{{ route('revisor.undoArticle', $article) }}" method="POST">
                                             @csrf
