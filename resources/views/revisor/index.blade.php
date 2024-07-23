@@ -6,9 +6,10 @@
             </div>
         </div>
     </div>
+    @if ($article_to_check)
     <div class="container-fluid mt-3">
         <div class="row">
-        <div class="col-8 col-md-3 mt-5 me-5 ms-5 d-flex flex-column align-items-center">
+            <div class="col-8 col-md-3 mt-5 me-5 ms-5 d-flex flex-column align-items-center">
             <div class="shop-card w-100">
                 <div class="title">
                     <h2 class="text-truncate">{{ $article_to_check->title }}</h2>
@@ -51,7 +52,6 @@
             @endif
     </div>
     
-    @if ($article_to_check)
     @if ($article_to_check->images->count())
     @foreach ($article_to_check->images as $key => $image)
     <div class="col-2 col-md-4 mb-0 mb-md-3">

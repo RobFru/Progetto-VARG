@@ -10,7 +10,7 @@ carrello offcanvas che puoi visualizzare su qualsiasi pagina con dentro custom c
 
 button carrello da modificare
 
-errore details al click se non hai fatto l'accesso 
+migliorare offcanvas show
 
 ricerca foto
 
