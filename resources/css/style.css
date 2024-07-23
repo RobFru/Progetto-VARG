@@ -12,7 +12,10 @@ body {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none !important;
+}
+a:hover {
+    text-decoration: none !important;
 }
 
 .alert-custom {
@@ -76,4 +79,14 @@ a {
 .table-custom {
     --bs-table-bg: var(--acc) !important;
     --bs-table-color: var(--bg) !important;
+}
+
+.sort {
+ text-decoration: none;
+ color: white !important;
+}
+
+.next-custom {
+    position: absolute;
+    right: 30%;
 }

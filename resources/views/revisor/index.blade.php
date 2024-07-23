@@ -2,19 +2,19 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 mt-3 mb-3 text-center">
-                <h1 class="display-5 text center pb-2 mt-4">{{__('ui.Dashboard')}}</h1>
+                <h1 class="display-5 text center pb-2 mt-4">{{ __('ui.Dashboard') }}</h1>
             </div>
         </div>
     </div>
     @if ($article_to_check)
-        <div class="container-fluid mt-3">
-            <div class="row">
-                <div class="col-8 col-md-3 mt-5 me-5 ms-5 d-flex flex-column align-items-center">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-8 col-md-3 mb-5 me-5 ms-5 d-flex">
                     <div class="shop-card w-100">
                         <div class="title">
                             <h2 class="text-truncate">{{ $article_to_check->title }}</h2>
                         </div>
-                        <h3>{{__('ui.Author')}}: {{ $article_to_check->user->name }}</h3>
+                        <h3>{{ __('ui.Author') }}: {{ $article_to_check->user->name }}</h3>
                         <h4>${{ $article_to_check->price }}</h4>
                         <div class="d-flex justify-content-center mb-3">
                             <a href="{{ route('byCategory', ['category' => $article_to_check->category]) }}"
@@ -23,26 +23,26 @@
                         <div class="desc">
                             <p>{{ $article_to_check->description }}</p>
                         </div>
-                        <div class="d-flex pb-4 justify-content-around w-100 mt-5">
+                        <div class="d-flex pb-4 justify-content-around w-100">
                             <form action="{{ route('accept', ['article' => $article_to_check]) }}" method="POST">
                                 @csrf
                                 @method('PATCH')
-                                <button class=" btn btn-custom-accept">{{__('ui.Approve')}}</button>
+                                <button class=" btn btn-custom-accept">{{ __('ui.Approve') }}</button>
                             </form>
                             <form action="{{ route('reject', ['article' => $article_to_check]) }}" method="POST">
                                 @csrf
                                 @method('PATCH')
-                                <button class="btn btn-custom-reject">{{__('ui.Reject')}}</button>
+                                <button class="btn btn-custom-reject">{{ __('ui.Reject') }}</button>
                             </form>
                             @if ($article_to_rollback)
                                 <form action="{{ route('goBack', ['article' => $article_to_rollback]) }}"
                                     method="POST">
                                     @csrf
                                     @method('PATCH')
-                                    <button class=" btn btn-custom-2">{{__('ui.Cancel')}}</button>
+                                    <button class=" btn btn-custom-2">{{ __('ui.Cancel') }}</button>
                                 </form>
                             @else
-                                <h4>{{__('ui.No cancellable articles')}}</h4>
+                                <h4>{{ __('ui.No cancellable articles') }}</h4>
                             @endif
                         </div>
                     </div>
@@ -57,62 +57,110 @@
                 {{-- Inizio carosello --}}
                 {{-- carosello immagini --}}
                 @if ($article_to_check->images->count())
-                    <div id="carouselExample" class="carousel slide col-2 col-md-8 mb-0 mb-md-3">
+                    <div id="carouselExample" class="carousel slide col-12 col-md-7 mb-0 mb-md-3">
                         <div class="carousel-inner">
                             @foreach ($article_to_check->images as $key => $image)
                                 <div class="carousel-item @if ($loop->first) active @endif">
-                                    <div class="d-flex">
-                                    <img src="{{ $image->getUrl(300, 300) }}" class="d-block w-100"
-                                        alt="img {{ $key + 1 }} of {{ $article_to_check->title }}">
-                                
-                                            <div class="shop-card bg-dark">
-                                                <div class="col-12">
-                                                    <h3 class="">Labels</h3>
-                                                </div>
-                                                @if ($image->labels)
-                                                    @foreach ($image->labels as $label)
+                                    <div class="d-md-flex">
+                                        <img src="{{ $image->getUrl(300, 300) }}" class="d-block w-100"
+                                            alt="img {{ $key + 1 }} of {{ $article_to_check->title }}">
+                                        {{-- DESKTOP --}}
+                                        <div class="shop-card d-none d-md-block">
+                                            <div class="col-12">
+                                                <h3 class="">Labels</h3>
+                                            </div>
+                                            @if ($image->labels)
+                                                @foreach ($image->labels as $label)
+                                                    <div class="col-12 col-md-3">
                                                         <span
-                                                            class="badge bg-secondary mt-2 ms-3">#{{ $label }}</span>
-                                                    @endforeach
-                                                @else
-                                                    <p class="fst-italic">No labels</p>
-                                                @endif
-                                                <div class="row justify-content-around mt-5">
-                                                    <div class="col-1 col-md-2 d-flex flex-column align-items-center ">
-                                                        <div class="badge bg-primary">Adult</div>
-                                                        <div class=" {{ $image->adult }}"></div>
+                                                            class="badge btn-custom mt-2 ms-3">#{{ $label }}</span>
                                                     </div>
-                                                    <div class="col-1 col-md-2 d-flex flex-column align-items-center ">
-                                                        <div class="badge bg-primary">Medical</div>
-                                                        <div class=" {{ $image->medical }}"></div>
-                                                    </div>
-                                                    <div class="col-1 col-md-2 d-flex flex-column align-items-center ">
-                                                        <div class="badge bg-primary">Spoof</div>
-                                                        <div class=" {{ $image->spoof }}"></div>
-                                                    </div>
-                                                    <div class="col-1 col-md-2 d-flex flex-column align-items-center ">
-                                                        <div class="badge bg-primary">Violence</div>
-                                                        <div class=" {{ $image->violence }}"></div>
-                                                    </div>
-                                                    <div class="col-1 col-md-2 d-flex flex-column align-items-center ">
-                                                        <div class="badge bg-primary">Racy</div>
-                                                        <div class=" {{ $image->racy }}"></div>
-                                                    </div>
+                                                @endforeach
+                                            @else
+                                                <p class="fst-italic">No labels</p>
+                                            @endif
+                                            <div class="col-12 mt-3">
+                                                <h3 class="">Tags</h3>
+                                            </div>
+                                            <div class="row mt-2 ms-2">
+                                                <div class="col-12 d-flex my-1">
+                                                    <div class="badge btn-custom-2">Adult</div>
+                                                    <div class=" {{ $image->adult }} ms-1"></div>
+                                                </div>
+                                                <div class="col-12 d-flex my-1">
+                                                    <div class="badge btn-custom-2">Medical</div>
+                                                    <div class=" {{ $image->medical }} ms-1"></div>
+                                                </div>
+                                                <div class="col-12 d-flex my-1">
+                                                    <div class="badge btn-custom-2">Spoof</div>
+                                                    <div class=" {{ $image->spoof }} ms-1"></div>
+                                                </div>
+                                                <div class="col-12 d-flex my-1">
+                                                    <div class="badge btn-custom-2">Violence</div>
+                                                    <div class=" {{ $image->violence }} ms-1"></div>
+                                                </div>
+                                                <div class="col-12 d-flex my-1">
+                                                    <div class="badge btn-custom-2">Racy</div>
+                                                    <div class=" {{ $image->racy }} ms-1"></div>
                                                 </div>
                                             </div>
-                                      </div>
+                                        </div>
+                                        {{-- MOBILE --}}
+                                        <div class="shop-card d-block d-md-none">
+                                            <div class="col-12">
+                                                <h3 class="">Labels</h3>
+                                            </div>
+
+                                            @if ($image->labels)
+                                                @foreach ($image->labels as $label)
+                                                    <span class="badge btn-custom">#{{ $label }}</span>
+                                                @endforeach
+                                            @else
+                                                <p class="fst-italic">No labels</p>
+                                            @endif
+                                            <div class="col-12 mt-3">
+                                                <h3 class="">Tags</h3>
+                                            </div>
+                                            <div class="row mt-2 ms-2">
+                                                <div class="col-12 d-flex my-1">
+                                                    <div class="badge btn-custom-2">Adult</div>
+                                                    <div class=" {{ $image->adult }} ms-1"></div>
+                                                </div>
+                                                <div class="col-12 d-flex my-1">
+                                                    <div class="badge btn-custom-2">Medical</div>
+                                                    <div class=" {{ $image->medical }} ms-1"></div>
+                                                </div>
+                                                <div class="col-12 d-flex my-1">
+                                                    <div class="badge btn-custom-2">Spoof</div>
+                                                    <div class=" {{ $image->spoof }} ms-1"></div>
+                                                </div>
+                                                <div class="col-12 d-flex my-1">
+                                                    <div class="badge btn-custom-2">Violence</div>
+                                                    <div class=" {{ $image->violence }} ms-1"></div>
+                                                </div>
+                                                <div class="col-12 d-flex my-1">
+                                                    <div class="badge btn-custom-2">Racy</div>
+                                                    <div class=" {{ $image->racy }} ms-1"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             @endforeach
                         </div>
                         @if ($article_to_check->images->count() > 1)
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                          </button>
-                          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                          </button>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon btn-custom rounded-pill"
+                                    aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next next-custom" type="button"
+                                data-bs-target="#carouselExample" data-bs-slide="next">
+                                <span class="carousel-control-next-icon btn-custom rounded-pill"
+                                    aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         @endif
                     </div>
                 @endif
@@ -143,12 +191,26 @@
                 <table class="table">
                     <thead class="table-custom">
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">{{__('ui.Title')}}</th>
-                            <th scope="col">{{__('ui.Price')}}</th>
-                            <th scope="col">{{__('ui.By')}}</th>
-                            <th scope="col">{{__('ui.Actions')}}</th>
-                            <th scope="col">{{__('ui.Status')}}</th>
+                            <th scope="col-1">#</th>
+                            <th scope="col-1">{{ __('ui.Title') }}</th>
+                            <th scope="col-1">{{ __('ui.Price') }}</th>
+                            <th scope="col-1">{{ __('ui.By') }}</th>
+                            <th scope="col-1">{{ __('ui.Actions') }}</th>
+                            <th scope="col-1">{{ __('ui.Status') }}
+                                <span class="sort">
+                                    <a class="decoration-none sort"
+                                        href="{{ route('revisor.index', ['sort' => 'status', 'direction' => request('direction') == 'asc' ? 'desc' : 'asc']) }}">
+                                        <i class="bi bi-arrow-down-up"></i>
+                                        @if (request('sort') == 'status')
+                                            @if (request('direction') == 'asc')
+                                                <i class="fas fa-sort-up"></i>
+                                            @else
+                                                <i class="fas fa-sort-down"></i>
+                                            @endif
+                                        @endif
+                                    </a>
+                                </span>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -160,21 +222,22 @@
                                 <td>{{ $article->user->name }}</td>
                                 <td>
                                     @if (is_null($article->is_accepted))
-                                        <p>{{__('ui.Article not yet reviewed')}}</p>
+                                        <p>{{ __('ui.Article not yet reviewed') }}</p>
                                     @else
                                         <form action="{{ route('revisor.undoArticle', $article) }}" method="POST">
                                             @csrf
-                                            <button type="submit" class="btn btn-custom-2">{{__('ui.Redirect for review')}}</button>
+                                            <button type="submit"
+                                                class="btn btn-custom-2">{{ __('ui.Redirect for review') }}</button>
                                         </form>
                                     @endif
                                 </td>
                                 <td>
                                     @if ($article->is_accepted === null)
-                                        <p class="text-warning">{{__('ui.To be revised')}}</p>
+                                        <p class="text-warning">{{ __('ui.To be revised') }}</p>
                                     @elseif ($article->is_accepted)
-                                        <p class="text-success">{{__('ui.Accepted')}}</p>
+                                        <p class="text-success">{{ __('ui.Accepted') }}</p>
                                     @else
-                                        <p class="text-danger">{{__('ui.Rejected')}}</p>
+                                        <p class="text-danger">{{ __('ui.Rejected') }}</p>
                                     @endif
                                 </td>
                             </tr>

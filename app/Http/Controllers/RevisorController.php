@@ -15,12 +15,30 @@ class RevisorController extends Controller
 {
     //
 
-    public function index()
+    public function index(Request $request)
     {
         $article_to_check = Article::where('is_accepted', null)->first();
         // TestVittorio per il rollback
-        $article_to_rollback=Article::whereNotNull('is_accepted')->orderBy('id', 'desc')->first();
+        $article_to_rollback = Article::whereNotNull('is_accepted')->orderBy('id', 'desc')->first();
         $articles = Article::all();
+
+        // Logica per ordinamento della tabella
+        $query = Article::query();
+
+        if ($request->has('sort') && $request->has('direction')) {
+            $direction = $request->direction == 'asc' ? 'asc' : 'desc';
+
+            if ($request->sort == 'status') {
+                $query->orderByRaw("CASE 
+                WHEN is_accepted IS NULL THEN 1
+                WHEN is_accepted = 1 THEN 2
+                ELSE 3
+                END $direction");
+            }
+        }
+
+        $articles = $query->get();
+
         return view('revisor.index', compact('article_to_check', 'article_to_rollback', 'articles'));
     }
 
@@ -40,19 +58,21 @@ class RevisorController extends Controller
             ->with('message', "The article $article->title was rejected successfully");
     }
 
-    public function goBack(Article $article){
+    public function goBack(Article $article)
+    {
         $article->setAccepted(null);
         return redirect()
-        ->back()
-        ->with('message', "The article $article->title was rollbacked successfully");
+            ->back()
+            ->with('message', "The article $article->title was rollbacked successfully");
     }
 
-    public function undoArticle(Article $article){
+    public function undoArticle(Article $article)
+    {
         $article->setAccepted(null);
         $article->save();
         return redirect()
-        ->back()
-        ->with('message', "The article $article->title was rollbacked successfully");
+            ->back()
+            ->with('message', "The article $article->title was rollbacked successfully");
     }
     public function becomeRevisor(Request $request)
     {
