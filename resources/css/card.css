@@ -84,28 +84,7 @@ Shop Card
     margin-top: 4px;
 }
 
-.shop-card .btn {
-    position: relative;
-    z-index: 1;
-    display: inline-block;
-    font-size: 13px;
-    font-weight: 900;
-    text-transform: uppercase;
-    color: #ff3100;
-    padding: 12px 18px;
-    cursor: pointer;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    line-height: 0.95;
-    border: none;
-    background: none;
-    outline: none;
-    border: 1px solid #ff3100;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.shop-card .btn .bg {
+.shop-card .bg {
     width: 101%;
     height: 101%;
     display: block !important;

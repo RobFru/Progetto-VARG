@@ -46,6 +46,10 @@ a {
     border-bottom: 3px solid var(--acc);
 }
 
+.separate-footer{
+    border-bottom: 1px solid var(--btn);
+}
+
 .buy_logo {
     height: 55px;
     width: auto;

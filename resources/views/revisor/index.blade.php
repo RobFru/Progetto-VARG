@@ -7,64 +7,8 @@
         </div>
     </div>
     <div class="container-fluid mt-3">
-        
-        
-        @if ($article_to_check)
-        <div class="row justify-content-center">
-            @if ($article_to_check->images->count())
-            @foreach ($article_to_check->images as $key => $image)
-            <div class="col-6 col-md-4 mb-3">
-                {{-- @dd($image->getUrl(300, 300)) --}}
-                <img src="{{ $image->getUrl(300, 300) }}" class="d-block w-100"
-                alt="img {{ $key + 1 }} of {{ $article_to_check->title }}">
-            </div>
-            
-            <div class="col-6 mt-4">
-                <div class="card-body">
-                    <div class="row justify-content-center">
-                        <div class="col-12 p-5 my-5">
-                            <h3 class="text-center">Labels</h3>
-                            @if ($image->labels)
-                            @foreach ($image->labels as $label)
-                            <span class="badge bg-secondary mt-2 ms-2">#{{ $label}}</span>
-                            @endforeach
-                            @else
-                            <p class="fst-italic">No labels</p>
-                            @endif
-                        </div>
-                        <div class="col-12 my-5 p-5 d-flex justify-content-center">
-                            <div class="row justify-content-around w-100">
-                                <div class="col-2 d-flex flex-column align-items-center ">
-                                    <div class="badge bg-primary">Adult</div>
-                                    <div class=" {{ $image->adult}}"></div>
-                                </div>
-                                <div class="col-2 d-flex flex-column align-items-center ">
-                                    <div class="badge bg-primary">Medical</div>
-                                    <div class=" {{ $image->medical}}"></div>
-                                </div>
-                                <div class="col-2 d-flex flex-column align-items-center ">
-                                    <div class="badge bg-primary">Spoof</div>
-                                    <div class=" {{ $image->spoof}}"></div>
-                                </div>
-                                <div class="col-2 d-flex flex-column align-items-center ">
-                                    <div class="badge bg-primary">Violence</div>
-                                    <div class=" {{ $image->violence}}"></div>
-                                </div>
-                                <div class="col-2 d-flex flex-column align-items-center ">
-                                    <div class="badge bg-primary">Racy</div>
-                                    <div class=" {{ $image->racy}}"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-            @endif
-        </div>
-    </div>
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-3 ps-4 d-flex flex-column align-items-center">
+        <div class="row">
+        <div class="col-8 col-md-3 mt-5 me-5 ms-5 d-flex flex-column align-items-center">
             <div class="shop-card w-100">
                 <div class="title">
                     <h2 class="text-truncate">{{ $article_to_check->title }}</h2>
@@ -77,27 +21,27 @@
                 <div class="desc">
                     <p>{{ $article_to_check->description }}</p>
                 </div>
-            </div>
-            <div class="d-flex pb-4 justify-content-around  w-100 mt-5">
-                <form action="{{ route('reject', ['article' => $article_to_check]) }}" method="POST">
-                    @csrf
-                    @method('PATCH')
-                    <button class="btn btn-danger">Reject</button>
-                </form>
-                <form action="{{ route('accept', ['article' => $article_to_check]) }}" method="POST">
-                    @csrf
-                    @method('PATCH')
-                    <button class=" btn btn-success">Accept</button>
-                </form>
-                @if ($article_to_rollback)
-                <form action="{{ route('goBack', ['article' => $article_to_rollback]) }}" method="POST">
-                    @csrf
-                    @method('PATCH')
-                    <button class=" btn btn-custom-2">Rollback</button>
-                </form>
-                @else
-                <h4>No rollback</h4>
-                @endif
+                <div class="d-flex pb-4 justify-content-around w-100 mt-5">
+                    <form action="{{ route('accept', ['article' => $article_to_check]) }}" method="POST">
+                        @csrf
+                        @method('PATCH')
+                        <button class=" btn btn-custom-accept">Accept</button>
+                    </form>
+                    <form action="{{ route('reject', ['article' => $article_to_check]) }}" method="POST">
+                        @csrf
+                        @method('PATCH')
+                        <button class="btn btn-custom-reject">Reject</button>
+                    </form>
+                    @if ($article_to_rollback)
+                    <form action="{{ route('goBack', ['article' => $article_to_rollback]) }}" method="POST">
+                        @csrf
+                        @method('PATCH')
+                        <button class=" btn btn-custom-2">Rollback</button>
+                    </form>
+                    @else
+                    <h4>No rollback</h4>
+                    @endif
+                </div>
             </div>
             @if (session()->has('message'))
             <div class="alert alert-custom alert-dismissible fade show" role="alert">
@@ -105,8 +49,60 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             @endif
-        </div>
     </div>
+    
+    @if ($article_to_check)
+    @if ($article_to_check->images->count())
+    @foreach ($article_to_check->images as $key => $image)
+    <div class="col-2 col-md-4 mb-0 mb-md-3">
+        {{-- @dd($image->getUrl(300, 300)) --}}
+        <img src="{{ $image->getUrl(300, 300) }}" class="d-block w-100"
+        alt="img {{ $key + 1 }} of {{ $article_to_check->title }}">
+    </div>
+    
+    <div class="col-12 col-md-3">
+        <div class="row">
+                        <div class="shop-card">
+                        <div class="col-12">
+                            <h3 class="">Labels</h3>
+                        </div>
+                            @if ($image->labels)
+                            @foreach ($image->labels as $label)
+                            <span class="badge bg-secondary mt-2 ms-3">#{{ $label}}</span>
+                            @endforeach
+                            @else
+                            <p class="fst-italic">No labels</p>
+                            @endif
+                            <div class="row justify-content-around mt-5">
+                                <div class="col-1 col-md-2 d-flex flex-column align-items-center ">
+                                    <div class="badge bg-primary">Adult</div>
+                                    <div class=" {{ $image->adult}}"></div>
+                                </div>
+                                <div class="col-1 col-md-2 d-flex flex-column align-items-center ">
+                                    <div class="badge bg-primary">Medical</div>
+                                    <div class=" {{ $image->medical}}"></div>
+                                </div>
+                                <div class="col-1 col-md-2 d-flex flex-column align-items-center ">
+                                    <div class="badge bg-primary">Spoof</div>
+                                    <div class=" {{ $image->spoof}}"></div>
+                                </div>
+                                <div class="col-1 col-md-2 d-flex flex-column align-items-center ">
+                                    <div class="badge bg-primary">Violence</div>
+                                    <div class=" {{ $image->violence}}"></div>
+                                </div>
+                                <div class="col-1 col-md-2 d-flex flex-column align-items-center ">
+                                    <div class="badge bg-primary">Racy</div>
+                                    <div class=" {{ $image->racy}}"></div>
+                        </div>
+                            </div>
+                    </div>
+            </div>
+    </div>
+            
+            @endforeach
+            @endif
+</div>
+</div>
 </div>
 @else
 <div class="row justify-content-center align-items-center text-center">
