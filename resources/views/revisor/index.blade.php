@@ -57,105 +57,106 @@
 
                 {{-- carosello immagini --}}
                 @if ($article_to_check->images->count())
-                    <div id="carouselExample" class="carousel slide col-2 col-md-4 mb-0 mb-md-3">
+                    <div id="carousel2" class="carousel slide col-2 col-md-4 mb-0 mb-md-3">
                         <div class="carousel-inner">
                             @foreach ($article_to_check->images as $key => $image)
                                 <div class="carousel-item @if ($loop->first) active @endif">
                                     <img src="{{ $image->getUrl(300, 300) }}" class="d-block w-100"
-                                    alt="img {{ $key + 1 }} of {{ $article_to_check->title }}">
+                                        alt="img {{ $key + 1 }} of {{ $article_to_check->title }}">
                                 </div>
                             @endforeach
                         </div>
                         @if ($article_to_check->images->count() > 1)
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel2"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel2"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         @endif
                     </div>
 
                     {{-- carosello labels --}}
-                    <div id="carouselExample" class="carousel slide">
+                    <div id="carousel1" class="carousel slide">
                         <div class="carousel-inner">
                             @foreach ($article_to_check->images as $key => $image)
-                          <div class="carousel-item active">
-                            <div class="col-12 col-md-3">
-                                <div class="row">
-                                    <div class="shop-card">
-                                        <div class="col-12">
-                                            <h3 class="">Labels</h3>
-                                        </div>
-                                        @if ($image->labels)
-                                            @foreach ($image->labels as $label)
-                                                <span class="badge bg-secondary mt-2 ms-3">#{{ $label }}</span>
-                                            @endforeach
-                                        @else
-                                            <p class="fst-italic">No labels</p>
-                                        @endif
-                                        <div class="row justify-content-around mt-5">
-                                            <div class="col-1 col-md-2 d-flex flex-column align-items-center ">
-                                                <div class="badge bg-primary">Adult</div>
-                                                <div class=" {{ $image->adult }}"></div>
-                                            </div>
-                                            <div class="col-1 col-md-2 d-flex flex-column align-items-center ">
-                                                <div class="badge bg-primary">Medical</div>
-                                                <div class=" {{ $image->medical }}"></div>
-                                            </div>
-                                            <div class="col-1 col-md-2 d-flex flex-column align-items-center ">
-                                                <div class="badge bg-primary">Spoof</div>
-                                                <div class=" {{ $image->spoof }}"></div>
-                                            </div>
-                                            <div class="col-1 col-md-2 d-flex flex-column align-items-center ">
-                                                <div class="badge bg-primary">Violence</div>
-                                                <div class=" {{ $image->violence }}"></div>
-                                            </div>
-                                            <div class="col-1 col-md-2 d-flex flex-column align-items-center ">
-                                                <div class="badge bg-primary">Racy</div>
-                                                <div class=" {{ $image->racy }}"></div>
+                                <div class="carousel-item @if ($loop->first) active @endif">
+                                    <div class="col-12 col-md-3">
+                                        <div class="row">
+                                            <div class="shop-card">
+                                                <div class="col-12">
+                                                    <h3 class="">Labels</h3>
+                                                </div>
+                                                @if ($image->labels)
+                                                    @foreach ($image->labels as $label)
+                                                        <span
+                                                            class="badge bg-secondary mt-2 ms-3">#{{ $label }}</span>
+                                                    @endforeach
+                                                @else
+                                                    <p class="fst-italic">No labels</p>
+                                                @endif
+                                                <div class="row justify-content-around mt-5">
+                                                    <div class="col-1 col-md-2 d-flex flex-column align-items-center ">
+                                                        <div class="badge bg-primary">Adult</div>
+                                                        <div class=" {{ $image->adult }}"></div>
+                                                    </div>
+                                                    <div class="col-1 col-md-2 d-flex flex-column align-items-center ">
+                                                        <div class="badge bg-primary">Medical</div>
+                                                        <div class=" {{ $image->medical }}"></div>
+                                                    </div>
+                                                    <div class="col-1 col-md-2 d-flex flex-column align-items-center ">
+                                                        <div class="badge bg-primary">Spoof</div>
+                                                        <div class=" {{ $image->spoof }}"></div>
+                                                    </div>
+                                                    <div class="col-1 col-md-2 d-flex flex-column align-items-center ">
+                                                        <div class="badge bg-primary">Violence</div>
+                                                        <div class=" {{ $image->violence }}"></div>
+                                                    </div>
+                                                    <div class="col-1 col-md-2 d-flex flex-column align-items-center ">
+                                                        <div class="badge bg-primary">Racy</div>
+                                                        <div class=" {{ $image->racy }}"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                          </div>
-                          @endforeach
+                            @endforeach
                         </div>
-                        {{-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                           <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
                           <span class="carousel-control-next-icon" aria-hidden="true"></span>
                           <span class="visually-hidden">Next</span>
-                        </button> --}}
-                      </div>
-    @endif
-    </div>
-    </div>
-    </div>
-@else
-    <div class="row justify-content-center align-items-center text-center">
-        <div class="col-12">
-            <h1 class="fst-italic display-4">
-                There are no articles to check.
-            </h1>
-            @if ($article_to_rollback)
-                <form action="{{ route('goBack', ['article' => $article_to_rollback]) }}" method="POST">
-                    @csrf
-                    @method('PATCH')
-                    <button class="mt-5 btn-2 btn-custom-2">Rollback</button>
-                </form>
-            @else
-                <h4 class="">No rollback</h4>
-            @endif
+                        </button>
+                    </div>
+                @endif
+            </div>
         </div>
-    </div>
+        </div>
+    @else
+        <div class="row justify-content-center align-items-center text-center">
+            <div class="col-12">
+                <h1 class="fst-italic display-4">
+                    There are no articles to check.
+                </h1>
+                @if ($article_to_rollback)
+                    <form action="{{ route('goBack', ['article' => $article_to_rollback]) }}" method="POST">
+                        @csrf
+                        @method('PATCH')
+                        <button class="mt-5 btn-2 btn-custom-2">Rollback</button>
+                    </form>
+                @else
+                    <h4 class="">No rollback</h4>
+                @endif
+            </div>
+        </div>
     @endif
     <div class="container-fluid mt-5">
         <div class="row justify-content-start justify-content-md-around">
