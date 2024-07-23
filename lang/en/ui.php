@@ -72,6 +72,7 @@ return[
     'Category' => 'Category',
     'Insert Article' => 'Insert Article',
 
-
+    // Cards
+    'details' => 'Details',
 
 ];

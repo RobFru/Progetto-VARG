@@ -16,7 +16,7 @@
 
     <div class="cta p-0 pt-4">
         <div class="price mx-2"><span>$</span>{{ $article->price }}</div>
-        <a class="" href="{{ route('show.article', compact('article')) }}"><button class="btn btn-custom mx-custom">Details</button></a>
+        <a class="" href="{{ route('show.article', compact('article')) }}"><button class="btn btn-custom mx-custom">{{ __('ui.details') }}</button></a>
     </div>
 </div>
 <div class="bg"></div>

@@ -74,4 +74,7 @@ return[
     'Category' => 'Categoria',
     'Insert Article' => 'Inserisci Articolo',
 
+     //Cards
+     'details' => 'Dettagli', 
+
 ];

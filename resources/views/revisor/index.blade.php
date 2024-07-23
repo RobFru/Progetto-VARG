@@ -61,32 +61,12 @@
                         <div class="carousel-inner">
                             @foreach ($article_to_check->images as $key => $image)
                                 <div class="carousel-item @if ($loop->first) active @endif">
+                                    <div class="d-flex flex-column">
+
+                                    
                                     <img src="{{ $image->getUrl(300, 300) }}" class="d-block w-100"
                                         alt="img {{ $key + 1 }} of {{ $article_to_check->title }}">
-                                </div>
-                            @endforeach
-                        </div>
-                        @if ($article_to_check->images->count() > 1)
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel2"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carousel2"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        @endif
-                    </div>
-
-                    {{-- carosello labels --}}
-                    <div id="carousel1" class="carousel slide">
-                        <div class="carousel-inner">
-                            @foreach ($article_to_check->images as $key => $image)
-                                <div class="carousel-item @if ($loop->first) active @endif">
-                                    <div class="col-12 col-md-3">
-                                        <div class="row">
+                                
                                             <div class="shop-card">
                                                 <div class="col-12">
                                                     <h3 class="">Labels</h3>
@@ -122,9 +102,29 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
+                                      </div>
                                 </div>
+                            @endforeach
+                        </div>
+                        @if ($article_to_check->images->count() > 1)
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel2"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel2"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        @endif
+                    </div>
+
+                    {{-- carosello labels --}}
+                    <div id="carousel1" class="carousel slide">
+                        <div class="carousel-inner">
+                            @foreach ($article_to_check->images as $key => $image)
+                                
                             @endforeach
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">

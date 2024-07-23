@@ -28,4 +28,5 @@ Per aggiungere un revisore
 php artisan app:make-user-revisor <emailUtente>
 
 # da aggiungere a .env
+
 QUEUE_CONNECTION=database
