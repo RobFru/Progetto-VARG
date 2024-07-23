@@ -37,17 +37,17 @@
                     <h3>{{__('ui.Noimagesforthisarticle')}}</h3>
                 @endif
             </div>
-            <div class="col-12 col-md-5 mt-5 text-start">
-                <h1 class="mb-3">Info : {{ $article->title }}</h1>
+            <div class="col-12 col-md-5 mt-5 text-center">
+                <h1 class="mb-3">{{ $article->title }}</h1>
                 <div class="d-block d-md-none separate"></div>
                 <div class="fs-2 text-center mt-1 mb-1">${{ $article->price }}
-                    <button class="btn-no-border mb-1" type="button" data-bs-toggle="offcanvas"
+                    {{-- <button class="btn-no-border mb-1" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                         <img src="../.././media/buy_logo.png" class="buy_logo" alt="buy_logo">
-                    </button>
+                    </button> --}}
                     <div class="separate"></div>
                 </div>
-                <p class="fs-3 text-start mt-3">{{__('ui.Description')}}: Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                <p class="fs-3 text-start mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                     Facere, dicta? Veniam iste magni consectetur, iusto aliquam fugiat alias eaque
                     aperiam?{{ $article->description }}</p>
                 <div class="separate"></div>
