@@ -44,8 +44,24 @@ Shop Card
     /* z-index: 2; */
 }
 
+.shop-card-1 {
+    /* position: absolute;
+    top: 50%;
+    left: 50%; */
+    /* -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+    width: 450px;
+    background: #f5f5f5;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 25px;
+    text-align: center;
+    /* z-index: 2; */
+}
+
 @media screen and (max-width: 700px) {
-    .shop-card {
+    .shop-card-1 {
         width: 100%;
     }
 }

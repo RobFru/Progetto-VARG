@@ -17,7 +17,7 @@
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-12 col-md-3 mb-5 me-5 ms-0 ms-md-5 d-flex">
-                    <div class="shop-card w-100">
+                    <div class="shop-card-1 w-100">
                         <div class="title">
                             <h2 class="text-truncate">{{ $article_to_check->title }}</h2>
                         </div>
@@ -65,7 +65,7 @@
                                         <img src="{{ $image->getUrl(500, 600) }}" class="d-block w-100"
                                             alt="img {{ $key + 1 }} of {{ $article_to_check->title }}">
                                         {{-- DESKTOP --}}
-                                        <div class="shop-card d-none d-md-block">
+                                        <div class="shop-card-1 d-none d-md-block">
                                             <div class="col-12">
                                                 <h3 class="">Labels</h3>
                                             </div>
@@ -106,7 +106,7 @@
                                             </div>
                                         </div>
                                         {{-- MOBILE --}}
-                                        <div class="shop-card d-block d-md-none">
+                                        <div class="shop-card-1 d-block d-md-none">
                                             <div class="col-12">
                                                 <h3 class="">Labels</h3>
                                             </div>
