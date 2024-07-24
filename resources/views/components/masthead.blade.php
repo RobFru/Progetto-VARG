@@ -13,7 +13,7 @@
         <span class="row">
         </span>
     </span>
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleSlidesOnly" class="carousel slide p-0" data-bs-ride="carousel">
         <div class="carousel-inner carousel-custom">
             <div class="carousel-item carousel-custom active" data-bs-interval="4000">
                 <img src="./media/background3.jpg" class="d-block w-100" alt="...">
